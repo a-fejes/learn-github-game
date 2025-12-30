@@ -124,7 +124,7 @@ function updateUI() {
         if (heading) {
             setTimeout(() => heading.focus(), 100);
         }
-    } else if (gameState.currentLevel === 5) {
+    } else if (gameState.currentLevel >= 18) {
         // Victory screen
         const victorySection = document.getElementById('victory');
         victorySection.removeAttribute('hidden');
@@ -174,39 +174,41 @@ function updateURLHash() {
  * Get hash name for a level number
  */
 function getLevelHashName(levelNumber) {
-    const levelNames = {
-        0: 'level0',
-        1: 'level1',
-        2: 'level2',
-        3: 'level3',
-        4: 'level4',
-        5: 'victory'
-    };
-    return levelNames[levelNumber] || 'level0';
+    if (levelNumber >= 18) {
+        return 'victory';
+    }
+    if (levelNumber >= 0 && levelNumber <= 17) {
+        return `level${levelNumber}`;
+    }
+    return 'level0';
 }
 
 /**
  * Get level number from hash string
  */
 function getLevelNumberFromHash(hash) {
-    const hashMap = {
-        'level0': 0,
-        'level1': 1,
-        'level2': 2,
-        'level3': 3,
-        'level4': 4,
-        'level5': 5,
-        'victory': 5
-    };
-    return hashMap[hash.toLowerCase()] !== undefined ? hashMap[hash.toLowerCase()] : 0;
+    const value = hash.toLowerCase();
+    if (value === 'victory') return 18;
+    if (value.startsWith('level')) {
+        const num = parseInt(value.replace('level', ''), 10);
+        if (!Number.isNaN(num) && num >= 0 && num <= 17) {
+            return num;
+        }
+    }
+    return 0;
 }
 
 /**
  * Check if hash is a valid level
  */
 function isValidLevel(hash) {
-    const validLevels = ['level0', 'level1', 'level2', 'level3', 'level4', 'level5', 'victory'];
-    return validLevels.includes(hash.toLowerCase());
+    const value = hash.toLowerCase();
+    if (value === 'victory') return true;
+    if (value.startsWith('level')) {
+        const num = parseInt(value.replace('level', ''), 10);
+        return !Number.isNaN(num) && num >= 0 && num <= 17;
+    }
+    return false;
 }
 
 /**
@@ -1417,7 +1419,11 @@ function goToPreviousLevel() {
 function goToNextLevel() {
     // Check if current level is completed before allowing navigation
     if (gameState.currentLevel < 18) {
-        if (gameState.completedLevels.includes(gameState.currentLevel) || gameState.currentLevel === 0) {
+        const canAdvance = gameState.currentLevel === 0 ||
+            gameState.completedLevels.includes(gameState.currentLevel) ||
+            hasPendingCheck(gameState.currentLevel);
+
+        if (canAdvance) {
             gameState.currentLevel++;
             saveGameState();
             updateUI();

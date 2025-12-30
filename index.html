@@ -102,7 +102,7 @@
             <div class="level-navigation">
                 <button id="prev-button" class="nav-button nav-prev" aria-label="Go to previous level" hidden>← Previous Page</button>
                 <span class="level-indicator">
-                    <span id="level-counter">0</span> / 5
+                    <span id="level-counter">0</span> / 18
                 </span>
                 <button id="next-button" class="nav-button nav-next" aria-label="Go to next level" hidden>Next Page →</button>
             </div>
@@ -637,14 +637,18 @@
                     <div class="mission-box">
                         <h3>Your Mission:</h3>
                         <ol>
-                            <li>Navigate to your repository (fork or copy of this project).</li>
-                            <li>Click "Add file" → "Create new file".</li>
+                            <li>If you do not already have a fork, click <strong>Fork</strong> on the repo first (link below). You need write access to add files.</li>
+                            <li>In your fork, click <strong>Add file</strong> → <strong>Create new file</strong>.</li>
                             <li>Name it: <strong>LICENSE</strong></li>
                             <li>Choose a license (MIT is simple and popular—<a href="https://choosealicense.com" target="_blank">help here</a>).</li>
                             <li>Paste the license text and commit the file.</li>
                             <li>Click the button below.</li>
                         </ol>
                     </div>
+
+                    <a class="action-link" target="_blank" rel="noopener" href="https://github.com/mgifford/learn-github-game/fork">
+                        → Fork the repository (if you need write access)
+                    </a>
 
                     <button type="button" id="check-level-9" class="level-button button-primary">The GNU Let Me Through!</button>
                     <div id="level-9-error" class="error-msg" role="alert" aria-live="assertive"></div>
