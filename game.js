@@ -145,11 +145,14 @@ function updateUI() {
         document.getElementById('user-status').textContent = greeting;
     }
 
-    // Update repository links with actual username/repo
-    updateRepositoryLinks();
-
     // Update navigation UI
     updateNavigationUI();
+    
+    // Update train position based on current level
+    const train = document.querySelector('.seuss-train');
+    if (train) {
+        train.setAttribute('data-progress', gameState.currentLevel);
+    }
     
     // Update URL hash to reflect current level
     updateURLHash();
@@ -204,28 +207,6 @@ function getLevelNumberFromHash(hash) {
 function isValidLevel(hash) {
     const validLevels = ['level0', 'level1', 'level2', 'level3', 'level4', 'level5', 'victory'];
     return validLevels.includes(hash.toLowerCase());
-}
-
-function updateRepositoryLinks() {
-    const repoUrl = `https://github.com/${REPO_OWNER}/${REPO_NAME}`;
-    
-    // Level 1: Repository link (for searching)
-    const repoLink = document.getElementById('repo-link');
-    if (repoLink) {
-        repoLink.href = `${repoUrl}/issues`;
-    }
-
-    // Level 2: New issue link
-    const newIssueLink = document.getElementById('new-issue-link');
-    if (newIssueLink) {
-        newIssueLink.href = `${repoUrl}/issues/new`;
-    }
-
-    // Level 4: Fork link
-    const forkLink = document.getElementById('fork-link');
-    if (forkLink) {
-        forkLink.href = `${repoUrl}/fork`;
-    }
 }
 
 /**

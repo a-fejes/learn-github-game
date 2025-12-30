@@ -964,6 +964,36 @@ a:focus {
     max-width: 400px;
     margin: 1rem auto;
     opacity: 0.9;
+    position: relative;
+    left: 0;
+    transition: left 1s ease-out;
+}
+
+/* Train positions based on level progress (0-17 levels) */
+.seuss-train[data-progress="0"] { left: 0%; }
+.seuss-train[data-progress="1"] { left: 5.88%; }
+.seuss-train[data-progress="2"] { left: 11.76%; }
+.seuss-train[data-progress="3"] { left: 17.65%; }
+.seuss-train[data-progress="4"] { left: 23.53%; }
+.seuss-train[data-progress="5"] { left: 29.41%; }
+.seuss-train[data-progress="6"] { left: 35.29%; }
+.seuss-train[data-progress="7"] { left: 41.18%; }
+.seuss-train[data-progress="8"] { left: 47.06%; }
+.seuss-train[data-progress="9"] { left: 52.94%; }
+.seuss-train[data-progress="10"] { left: 58.82%; }
+.seuss-train[data-progress="11"] { left: 64.71%; }
+.seuss-train[data-progress="12"] { left: 70.59%; }
+.seuss-train[data-progress="13"] { left: 76.47%; }
+.seuss-train[data-progress="14"] { left: 82.35%; }
+.seuss-train[data-progress="15"] { left: 88.24%; }
+.seuss-train[data-progress="16"] { left: 94.12%; }
+.seuss-train[data-progress="17"] { left: 100%; }
+.seuss-train[data-progress="18"] { left: 100%; } /* Victory */
+
+@media (prefers-reduced-motion: reduce) {
+    .seuss-train {
+        transition: none;
+    }
 }
 
 .train-svg {
