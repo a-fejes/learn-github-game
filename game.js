@@ -1434,12 +1434,94 @@ function goToPreviousLevel() {
 }
 
 function goToNextLevel() {
-    if (gameState.currentLevel < 5) {
-        gameState.currentLevel++;
-        saveGameState();
-        updateUI();
-        console.log('Navigated to level', gameState.currentLevel);
+    // Check if current level is completed before allowing navigation
+    if (gameState.currentLevel < 18) {
+        if (gameState.completedLevels.includes(gameState.currentLevel) || gameState.currentLevel === 0) {
+            gameState.currentLevel++;
+            saveGameState();
+            updateUI();
+            console.log('Navigated to level', gameState.currentLevel);
+        } else {
+            // Show stop sign and redirect
+            showStopSignAndRedirect();
+        }
     }
+}
+
+/**
+ * Show stop sign character when user tries to skip ahead
+ * Redirects to first incomplete level after 5 seconds
+ */
+function showStopSignAndRedirect() {
+    const modal = document.getElementById('stop-sign-modal');
+    const countdown = document.getElementById('redirect-countdown');
+    
+    modal.removeAttribute('hidden');
+    
+    let secondsLeft = 5;
+    countdown.textContent = secondsLeft;
+    
+    const countdownInterval = setInterval(() => {
+        secondsLeft--;
+        countdown.textContent = secondsLeft;
+        
+        if (secondsLeft <= 0) {
+            clearInterval(countdownInterval);
+            modal.setAttribute('hidden', '');
+            
+            // Find first incomplete level
+            let targetLevel = 0;
+            for (let i = 0; i <= 17; i++) {
+                if (!gameState.completedLevels.includes(i)) {
+                    targetLevel = i;
+                    break;
+                }
+            }
+            
+            // Navigate to first incomplete level
+            gameState.currentLevel = targetLevel;
+            saveGameState();
+            updateUI();
+        }
+    }, 1000);
+}
+
+/**
+ * Show stop sign character when user tries to skip ahead
+ * Redirects to first incomplete level after 5 seconds
+ */
+function showStopSignAndRedirect() {
+    const modal = document.getElementById('stop-sign-modal');
+    const countdown = document.getElementById('redirect-countdown');
+    
+    modal.removeAttribute('hidden');
+    
+    let secondsLeft = 5;
+    countdown.textContent = secondsLeft;
+    
+    const countdownInterval = setInterval(() => {
+        secondsLeft--;
+        countdown.textContent = secondsLeft;
+        
+        if (secondsLeft <= 0) {
+            clearInterval(countdownInterval);
+            modal.setAttribute('hidden', '');
+            
+            // Find first incomplete level
+            let targetLevel = 0;
+            for (let i = 0; i <= 17; i++) {
+                if (!gameState.completedLevels.includes(i)) {
+                    targetLevel = i;
+                    break;
+                }
+            }
+            
+            // Navigate to first incomplete level
+            gameState.currentLevel = targetLevel;
+            saveGameState();
+            updateUI();
+        }
+    }, 1000);
 }
 
 // Update navigation buttons visibility

@@ -1140,6 +1140,73 @@
         </div>
     </main>
 
+    <!-- Stop Sign Character (Error Prevention) -->
+    <div id="stop-sign-modal" class="stop-sign-modal" hidden aria-live="assertive" role="alert">
+        <div class="stop-sign-container">
+            <div class="character stop-sign-character">
+                <svg viewBox="0 0 120 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <!-- The Cautious Cat: A wise, helpful character -->
+                    <!-- Body -->
+                    <ellipse cx="60" cy="85" rx="25" ry="30" fill="#FF6B6B" class="wobble-effect"/>
+                    <!-- Head -->
+                    <circle cx="60" cy="45" r="22" fill="#FF5722" class="wobble-effect"/>
+                    <!-- Ears (alert cat ears) -->
+                    <path d="M 45 25 L 40 10 L 50 20 Z" fill="#FF5722"/>
+                    <path d="M 75 25 L 80 10 L 70 20 Z" fill="#FF5722"/>
+                    <path d="M 45 25 L 43 15 L 48 22 Z" fill="#FF8A65"/>
+                    <path d="M 75 25 L 77 15 L 72 22 Z" fill="#FF8A65"/>
+                    <!-- Eyes (concerned expression) -->
+                    <ellipse cx="50" cy="42" rx="4" ry="5" fill="#2A1A3F"/>
+                    <ellipse cx="70" cy="42" rx="4" ry="5" fill="#2A1A3F"/>
+                    <circle cx="51" cy="41" r="1.5" fill="white"/>
+                    <circle cx="71" cy="41" r="1.5" fill="white"/>
+                    <!-- Worried eyebrows -->
+                    <path d="M 46 37 Q 50 35 54 37" stroke="#2A1A3F" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    <path d="M 66 37 Q 70 35 74 37" stroke="#2A1A3F" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    <!-- Nose -->
+                    <path d="M 60 48 L 58 52 L 62 52 Z" fill="#2A1A3F"/>
+                    <!-- Mouth (concerned) -->
+                    <path d="M 55 55 Q 60 53 65 55" stroke="#2A1A3F" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    <!-- Whiskers -->
+                    <line x1="35" y1="46" x2="48" y2="45" stroke="#2A1A3F" stroke-width="1.5"/>
+                    <line x1="35" y1="50" x2="48" y2="50" stroke="#2A1A3F" stroke-width="1.5"/>
+                    <line x1="72" y1="45" x2="85" y2="46" stroke="#2A1A3F" stroke-width="1.5"/>
+                    <line x1="72" y1="50" x2="85" y2="50" stroke="#2A1A3F" stroke-width="1.5"/>
+                    <!-- Front paws -->
+                    <ellipse cx="50" cy="108" rx="6" ry="10" fill="#FF5722"/>
+                    <ellipse cx="70" cy="108" rx="6" ry="10" fill="#FF5722"/>
+                    <!-- Paw pads -->
+                    <ellipse cx="50" cy="114" rx="4" ry="5" fill="#D84315"/>
+                    <ellipse cx="70" cy="114" rx="4" ry="5" fill="#D84315"/>
+                    <!-- Tail (curved, alert) -->
+                    <path d="M 40 80 Q 25 70 20 55" stroke="#FF5722" stroke-width="8" fill="none" stroke-linecap="round"/>
+                </svg>
+            </div>
+            
+            <!-- Stop Sign -->
+            <div class="stop-sign">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Octagon -->
+                    <polygon points="30,8 70,8 92,30 92,70 70,92 30,92 8,70 8,30" 
+                             fill="#D32F2F" stroke="#FFF" stroke-width="4"/>
+                    <!-- STOP text -->
+                    <text x="50" y="60" font-family="Arial, sans-serif" font-size="28" 
+                          font-weight="bold" text-anchor="middle" fill="#FFF">STOP</text>
+                </svg>
+            </div>
+            
+            <div class="stop-sign-message">
+                <p class="rhyme">
+                    <em>"Whoa there, friend! Not quite so fast!<br>
+                    You must complete each step that's passed!<br>
+                    The Goat insists you learn each thing,<br>
+                    Before you jump to what's next in line!"</em>
+                </p>
+                <p class="redirect-notice">Redirecting you back in <span id="redirect-countdown">5</span> seconds...</p>
+            </div>
+        </div>
+    </div>
+
     <!-- GLOSSARY: The Educational Layer -->
     <footer class="site-footer" role="contentinfo">
         <details class="glossary">
