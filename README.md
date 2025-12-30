@@ -1,133 +1,164 @@
-# The Git-Goat's Gazette
+# 🎪 The Git-Goat's Gazette
 
-A **whimsical, WCAG 2.2 AA accessible** GitHub learning game for non-coders, designers, and policy-makers who want to understand collaborative development without fear of the terminal.
+> A **narrative-driven, whimsical, WCAG 2.2 AA accessible** GitHub learning game for non-coders, designers, policy-makers, and anyone curious about collaborative development.
+
+**Version 2.0** - Story-Driven Edition with URL Navigation, Parallax Guidance, and Interactive Events
 
 ---
 
 ## 📖 What Is This?
 
-"The Git-Goat's Gazette" teaches core GitHub skills through a narrative game:
+The Git-Goat's Gazette is an immersive educational experience that guides students on a **real GitHub journey**:
 
-1. **Level 0:** Log in with your GitHub username (Login)
-2. **Level 1:** Leave a comment on an issue (Collaboration)
-3. **Level 2:** Create a new issue (Reporting & Documentation)
-4. **Level 3:** Add a LICENSE file (Legal/Ownership)
-5. **Level 4:** Make a Pull Request (The Big Contribution)
+- **Consumer** → Explore and learn
+- **Creator** → Report issues, share ideas
+- **Contributor** → Fork, clone, experiment
+- **Community Member** → Understand responsibility, collaborate
 
-At each level, the player reads a Seussian rhyme, performs a real GitHub action, and the game validates it in real-time using the GitHub REST API.
+### 🎯 The Story Arc
+
+| Level | Quest | Skill | Story |
+|-------|-------|-------|-------|
+| 0 | **Identity** | Create GitHub account | Establish yourself in the community |
+| 1 | **Discovery** | Search for an issue | Learn to find what you need |
+| 2 | **Voice** | Create an issue | Share your ideas with confidence |
+| 3 | **Experimentation** | Fork a repository | Safe spaces to try things |
+| 4 | **Responsibility** | Add a LICENSE | Understand ethics matter |
+| 5 | **Collaboration** | Submit a PR | True partnership |
+| Victory | **Recognition** | Celebrate! | You belong here |
+
+Each level has:
+- ✅ Seussian rhyming narrative
+- ✅ Real GitHub action validation
+- ✅ Visual parallax guidance
+- ✅ Interactive feedback (discovery, creation, celebration)
+- ✅ Educational scaffolding
 
 ---
 
-## 🎮 How to Set Up for a Workshop
+## ✨ What's New in v2.0
 
-### Step 1: Create the Target Repository
+### 🔗 URL Navigation
+- **Shareable levels:** `https://example.com/#level1` through `#victory`
+- **Bookmarkable progress:** Save and resume at any level
+- **Browser back/forward:** Navigate like a normal website
 
-On GitHub, create a new **public** repository named `git-goat-gazette`. This is the repository that students will interact with.
+### 🎨 Parallax Visual Guidance
+- **Level 0:** Horizontal organizing (chaos → order)
+- **Level 1:** Vertical search depth (discovery journey)
+- **Level 3:** Deep forest (forking divergence)
+- **Level 4:** Interactive library (spotlight guidance)
+- **Level 5:** Isometric celebration stage
+
+### 🎬 Interactive Events
+- **Discovery:** Search particles, spotlight, sparkles
+- **Creation:** Pen strokes, emergence effects
+- **Error Recovery:** Gentle shake, helpful thought bubbles
+- **Celebration:** Confetti, fireworks, trophies
+- **Transitions:** Fades, wave reveals, dissolves
+
+### 🎓 Better Pedagogy
+- **Level 1:** Students **search** for "Suggestion Box" (not direct link)
+- **Real skills:** Navigate like actual developers
+- **Confidence building:** "I found it myself!"
+
+### 📝 Content Lifecycle
+- **Create:** See pen strokes, emergence animation
+- **Edit:** Inline editing with preview
+- **Delete:** Safe deletion with undo
+- **Message:** Mistakes are learning opportunities
+
+---
+
+## 🚀 Quick Start
+
+### 1. Setup Your Repository
+
+Create a public GitHub repository named `git-goat-gazette`:
 
 ```bash
-# Suggested:
-- Owner: Your GitHub username
-- Repository name: git-goat-gazette
-- Visibility: Public
-- Initialize with: No template
+# Minimal content needed:
+- Create Issue #1 titled "Suggestion Box"
+  (Keep open—students will comment here)
+- Create file: menu.txt with content: "1. Ham."
 ```
 
-### Step 2: Seed the Repository Content
+### 2. Deploy the Game
 
-Push the following structure to the repository's `main` branch:
+Push these files to your repository:
+- `index.html`
+- `style.css`
+- `game.js`
 
-#### File: `menu.txt`
-```
-1. Ham.
-```
+Enable GitHub Pages (Settings → Pages → Deploy from main branch).
 
-This file will be edited by students in Level 4.
+### 3. Configure the Game
 
-#### File: `.github/ISSUE_TEMPLATE/suggestion_box.md` (Optional)
-If you want to guide students on what to write:
-```markdown
-# Suggestion Box
-
-What would you like the Goat to know?
-
-- Is there something broken?
-- Do you have an idea?
-- Tell us!
+Edit `game.js` (line ~10):
+```javascript
+const REPO_OWNER = 'your-username';
+const REPO_NAME = 'git-goat-gazette';
 ```
 
-#### Create Issue #1
-Go to the **Issues** tab and create a new issue:
+### 4. Share the URL
 
-- **Title:** `Suggestion Box`
-- **Description:** 
-  ```
-  Welcome to the Gazette! This is where the Goat and the Gopher chat.
-  
-  Leave a comment below saying hello!
-  ```
-- **Do NOT close this issue.** Leave it open and pinned.
-
-#### Enable Discussions (Optional)
-Go to **Settings > Features** and enable **Discussions**. This allows students to practice more collaboration, though Level 3 focuses on the LICENSE file instead.
-
-### Step 3: Deploy the Game on GitHub Pages
-
-1. **Enable GitHub Pages:**
-   - Go to Settings → Pages
-   - Source: Deploy from branch
-   - Branch: `main`
-   - Folder: `/` (root)
-
-2. **Push these files to the repository:**
-   - `index.html`
-   - `style.css`
-   - `game.js`
-   - `README.md` (this file)
-
-3. **Update `game.js` configuration:**
-   ```javascript
-   const REPO_OWNER = 'YOUR_GITHUB_USERNAME'; // Replace with your username
-   const REPO_NAME = 'git-goat-gazette';       // Should match your repo name
-   ```
-
-4. **Access the game:**
-   ```
-   https://YOUR_USERNAME.github.io/git-goat-gazette/
-   ```
+Students visit:
+```
+https://your-username.github.io/git-goat-gazette/
+```
 
 ---
 
 ## 🏫 Running a Workshop
 
-### Before the Workshop
+### Before
+1. ✅ Create and configure the repository (Steps 1–2 above)
+2. ✅ Test the game with your GitHub account
+3. ✅ Read [PEDAGOGICAL_DESIGN.md](PEDAGOGICAL_DESIGN.md) to understand the teaching approach
 
-1. Create the repository and seed it (Steps 1–2 above).
-2. Verify the game loads at `https://YOUR_USERNAME.github.io/git-goat-gazette/`.
-3. Test the game yourself with a test GitHub account.
+### During
+1. **Frame the Story:**
+   > "Today, you're helping the Grumpy Gopher learn that GitHub is just shared teamwork—nothing scary."
 
-### During the Workshop
+2. **Share the Game URL** with students.
 
-1. **Introduce the Characters:**
-   - The Git-Goat: Your friendly guide.
-   - The Grumpy Gopher: The skeptical learner (that's the audience).
-   - The GNU: The licensing lawyer.
+3. **Key Teaching Moments:**
+   - **Level 1:** "Notice you have to search? Real developers search. This teaches the skill."
+   - **Level 3:** "Forking is how you experiment safely. Your changes don't affect the main project."
+   - **Level 4:** "A LICENSE tells people how they can use your work. Ethics matter in code."
 
-2. **Explain the Goal:**
-   > "You're helping the Grumpy Gopher understand that GitHub isn't scary—it's just a shared filing cabinet for teamwork."
+4. **Troubleshooting:**
+   - **"API blocked"?** Rate limit hit (60 requests/hour). Wait or use a Personal Access Token.
+   - **"Comment not found"?** GitHub's search indexes asynchronously (~30–60 sec). Retry.
+   - **"Confused about a term"?** See the Glossary at the bottom of the game page.
 
-3. **Have Students Visit the Game URL.**
-   - They'll enter their GitHub username.
-   - They'll follow the rhyming instructions to complete each level.
-   - The game validates in real-time using the public GitHub API.
+5. **Celebrate!**
+   - Level 5 completion shows a victory screen
+   - Students see their real GitHub contribution graph
+   - They've completed a real open-source-like workflow
 
-4. **Circulate and Help:**
-   - **Issue:** "The API is blocking me." → They've hit the 60-request/hour rate limit. Explain that if many people refresh, they can share a Personal Access Token (optional, advanced).
-   - **Issue:** "It says my comment isn't there yet." → GitHub's search API is indexed asynchronously. Wait 30–60 seconds and retry.
-   - **Issue:** "I don't understand what a Fork is." → Point them to the Glossary at the bottom of the game page.
+---
 
-5. **Celebrate Victory:**
-   - When students complete Level 4 (merge the PR), they see a victory screen.
-   - They can view their GitHub contribution graph.
+## 📚 Documentation
+
+| Document | For | Purpose |
+|----------|-----|---------|
+| [STORYBOARD.md](STORYBOARD.md) | Designers, Educators | Complete narrative arc and character journey |
+| [VISUAL_DESIGN_DIRECTION.md](VISUAL_DESIGN_DIRECTION.md) | Designers, Developers | Parallax specs, interactive event specs, animations |
+| [PEDAGOGICAL_DESIGN.md](PEDAGOGICAL_DESIGN.md) | Educators, Instructors | Why it works, learning outcomes, teaching strategy |
+| [AGENTS.md](AGENTS.md) | Developers | Architecture, patterns, technical reference |
+| [VISION_v2.0.md](VISION_v2.0.md) | Project Leads | Complete transformation overview |
+
+---
+
+## 💻 Technical Stack
+
+- **Frontend:** Vanilla JavaScript (no frameworks, no build step)
+- **API:** GitHub REST API v3 (public, unauthenticated)
+- **Storage:** Browser localStorage (game state only)
+- **Styling:** CSS Grid, CSS Variables, SVG characters
+- **Accessibility:** WCAG 2.2 AA
+- **Hosting:** GitHub Pages (free, fast, perfect)
 
 ---
 
