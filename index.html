@@ -14,6 +14,82 @@
         <div class="header-content">
             <h1>The Git-Goat's Gazette</h1>
             <p class="header-subtitle">A collaborative storytelling adventure</p>
+            
+            <!-- Seussian Train: Journey Progress Indicator -->
+            <div class="seuss-train" aria-hidden="true">
+                <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" class="train-svg">
+                    <!-- Smoke Puffs -->
+                    <circle cx="30" cy="15" r="8" fill="#E0E0E0" opacity="0.7" class="smoke smoke-1"/>
+                    <circle cx="40" cy="10" r="6" fill="#E0E0E0" opacity="0.5" class="smoke smoke-2"/>
+                    <circle cx="50" cy="8" r="4" fill="#E0E0E0" opacity="0.3" class="smoke smoke-3"/>
+                    
+                    <!-- Engine Body -->
+                    <rect x="20" y="40" width="45" height="30" rx="5" fill="#FF4444" stroke="#8B0000" stroke-width="2"/>
+                    
+                    <!-- Boiler -->
+                    <rect x="25" y="30" width="15" height="15" rx="3" fill="#FFD700" stroke="#8B0000" stroke-width="2"/>
+                    
+                    <!-- Smokestack -->
+                    <rect x="30" y="20" width="5" height="15" fill="#333" stroke="#000" stroke-width="1"/>
+                    <ellipse cx="32.5" cy="20" rx="4" ry="2" fill="#444"/>
+                    
+                    <!-- Cabin Windows -->
+                    <rect x="48" y="45" width="10" height="8" rx="2" fill="#87CEEB" stroke="#000" stroke-width="1"/>
+                    
+                    <!-- Wheels -->
+                    <g class="wheels">
+                        <circle cx="30" cy="70" r="8" fill="#333" stroke="#000" stroke-width="2"/>
+                        <circle cx="30" cy="70" r="3" fill="#666"/>
+                        <circle cx="55" cy="70" r="8" fill="#333" stroke="#000" stroke-width="2"/>
+                        <circle cx="55" cy="70" r="3" fill="#666"/>
+                    </g>
+                    
+                    <!-- Cars (representing levels) -->
+                    <g class="train-cars">
+                        <!-- Car 1 -->
+                        <rect x="75" y="45" width="30" height="25" rx="3" fill="#7FD656" stroke="#2A5A0A" stroke-width="2"/>
+                        <rect x="80" y="50" width="8" height="8" rx="1" fill="#87CEEB" stroke="#000" stroke-width="1"/>
+                        <rect x="92" y="50" width="8" height="8" rx="1" fill="#87CEEB" stroke="#000" stroke-width="1"/>
+                        <circle cx="85" cy="70" r="6" fill="#333" stroke="#000" stroke-width="2"/>
+                        <circle cx="95" cy="70" r="6" fill="#333" stroke="#000" stroke-width="2"/>
+                        
+                        <!-- Car 2 -->
+                        <rect x="115" y="45" width="30" height="25" rx="3" fill="#FF00FF" stroke="#8B008B" stroke-width="2"/>
+                        <rect x="120" y="50" width="8" height="8" rx="1" fill="#87CEEB" stroke="#000" stroke-width="1"/>
+                        <rect x="132" y="50" width="8" height="8" rx="1" fill="#87CEEB" stroke="#000" stroke-width="1"/>
+                        <circle cx="125" cy="70" r="6" fill="#333" stroke="#000" stroke-width="2"/>
+                        <circle cx="135" cy="70" r="6" fill="#333" stroke="#000" stroke-width="2"/>
+                        
+                        <!-- Car 3 -->
+                        <rect x="155" y="45" width="30" height="25" rx="3" fill="#00A8FF" stroke="#004488" stroke-width="2"/>
+                        <rect x="160" y="50" width="8" height="8" rx="1" fill="#87CEEB" stroke="#000" stroke-width="1"/>
+                        <rect x="172" y="50" width="8" height="8" rx="1" fill="#87CEEB" stroke="#000" stroke-width="1"/>
+                        <circle cx="165" cy="70" r="6" fill="#333" stroke="#000" stroke-width="2"/>
+                        <circle cx="175" cy="70" r="6" fill="#333" stroke="#000" stroke-width="2"/>
+                    </g>
+                    
+                    <!-- Connecting Links -->
+                    <line x1="65" y1="57" x2="75" y2="57" stroke="#333" stroke-width="2"/>
+                    <line x1="105" y1="57" x2="115" y2="57" stroke="#333" stroke-width="2"/>
+                    <line x1="145" y1="57" x2="155" y2="57" stroke="#333" stroke-width="2"/>
+                    
+                    <!-- Track -->
+                    <line x1="0" y1="78" x2="200" y2="78" stroke="#8B4513" stroke-width="3"/>
+                    <line x1="0" y1="82" x2="200" y2="82" stroke="#8B4513" stroke-width="3"/>
+                    <!-- Railroad Ties -->
+                    <rect x="10" y="78" width="3" height="6" fill="#654321"/>
+                    <rect x="30" y="78" width="3" height="6" fill="#654321"/>
+                    <rect x="50" y="78" width="3" height="6" fill="#654321"/>
+                    <rect x="70" y="78" width="3" height="6" fill="#654321"/>
+                    <rect x="90" y="78" width="3" height="6" fill="#654321"/>
+                    <rect x="110" y="78" width="3" height="6" fill="#654321"/>
+                    <rect x="130" y="78" width="3" height="6" fill="#654321"/>
+                    <rect x="150" y="78" width="3" height="6" fill="#654321"/>
+                    <rect x="170" y="78" width="3" height="6" fill="#654321"/>
+                    <rect x="190" y="78" width="3" height="6" fill="#654321"/>
+                </svg>
+            </div>
+            
             <div class="user-info" aria-live="polite" aria-atomic="true">
                 <p id="user-status">Enter your GitHub username to begin.</p>
             </div>
@@ -68,6 +144,51 @@
                         <p class="character-label">The Grumpy Gopher</p>
                     </div>
 
+                    <!-- Floating Papers Decoration -->
+                    <div class="floating-papers" aria-hidden="true">
+                        <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg" class="papers-svg">
+                            <!-- Paper 1 (tilted) -->
+                            <g class="paper paper-1" transform="rotate(-15 30 40)">
+                                <rect x="20" y="30" width="40" height="50" fill="#FFF" stroke="#333" stroke-width="2" rx="2"/>
+                                <line x1="25" y1="38" x2="55" y2="38" stroke="#00A8FF" stroke-width="1.5"/>
+                                <line x1="25" y1="44" x2="50" y2="44" stroke="#333" stroke-width="1"/>
+                                <line x1="25" y1="48" x2="52" y2="48" stroke="#333" stroke-width="1"/>
+                                <line x1="25" y1="52" x2="48" y2="52" stroke="#333" stroke-width="1"/>
+                            </g>
+                            
+                            <!-- Paper 2 (straight) -->
+                            <g class="paper paper-2">
+                                <rect x="80" y="20" width="35" height="45" fill="#FFF9E6" stroke="#333" stroke-width="2" rx="2"/>
+                                <line x1="85" y1="28" x2="110" y2="28" stroke="#FF00FF" stroke-width="1.5"/>
+                                <line x1="85" y1="34" x2="108" y2="34" stroke="#333" stroke-width="1"/>
+                                <line x1="85" y1="38" x2="105" y2="38" stroke="#333" stroke-width="1"/>
+                            </g>
+                            
+                            <!-- Paper 3 (tilted other way) -->
+                            <g class="paper paper-3" transform="rotate(20 150 50)">
+                                <rect x="140" y="35" width="38" height="48" fill="#FFF" stroke="#333" stroke-width="2" rx="2"/>
+                                <line x1="145" y1="43" x2="173" y2="43" stroke="#7FD656" stroke-width="1.5"/>
+                                <line x1="145" y1="49" x2="170" y2="49" stroke="#333" stroke-width="1"/>
+                                <line x1="145" y1="53" x2="168" y2="53" stroke="#333" stroke-width="1"/>
+                            </g>
+                            
+                            <!-- Paper 4 (bottom, scattered) -->
+                            <g class="paper paper-4" transform="rotate(-8 60 110)">
+                                <rect x="50" y="95" width="42" height="40" fill="#FFFACD" stroke="#333" stroke-width="2" rx="2"/>
+                                <line x1="55" y1="103" x2="87" y2="103" stroke="#FF4444" stroke-width="1.5"/>
+                                <line x1="55" y1="109" x2="82" y2="109" stroke="#333" stroke-width="1"/>
+                            </g>
+                            
+                            <!-- Pencil -->
+                            <g class="pencil" transform="rotate(35 120 95)">
+                                <rect x="110" y="85" width="8" height="35" fill="#FFD700" stroke="#8B6914" stroke-width="1"/>
+                                <polygon points="114,85 110,75 118,75" fill="#FFB6C1" stroke="#8B6914" stroke-width="1"/>
+                                <rect x="110" y="117" width="8" height="3" fill="#333"/>
+                                <polygon points="114,123 110,120 118,120" fill="#333"/>
+                            </g>
+                        </svg>
+                    </div>
+
                     <p class="rhyme">
                         <em>"I do not like this GitHub thing!<br>
                         It is for Coders! Not for Kings!<br>
@@ -92,7 +213,7 @@
                             >
                             <p id="username-hint" class="form-hint">Enter your GitHub handle. Don't have one? <a href="https://github.com/signup" target="_blank">Sign up here</a>.</p>
                         </div>
-                        <button type="button" id="login-button" class="level-button button-primary">I Am Who I Am!</button>
+                        <button type="submit" id="login-button" class="level-button button-primary">I Am Who I Am!</button>
                         <div id="level-0-error" class="error-msg" role="alert" aria-live="assertive"></div>
                     </form>
                 </div>
@@ -102,6 +223,47 @@
             <section id="level-1" class="seuss-card level-card" aria-labelledby="level-1-title" hidden>
                 <div class="card-content">
                     <h2 id="level-1-title" class="level-title">Level 1: The Suggestion Box</h2>
+
+                    <!-- Seussian Suggestion Box -->
+                    <div class="suggestion-box-decoration" aria-hidden="true">
+                        <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg" class="suggestion-box-svg">
+                            <!-- Box Body (whimsical, not perfectly square) -->
+                            <path d="M 30 50 Q 25 55 30 90 L 30 120 Q 30 125 35 125 L 115 125 Q 120 125 120 120 L 120 90 Q 125 55 120 50 Z" 
+                                  fill="#7FD656" stroke="#2A5A0A" stroke-width="3"/>
+                            
+                            <!-- Slot for suggestions (glowing) -->
+                            <rect x="45" y="35" width="60" height="8" rx="2" fill="#FFD700" stroke="#8B6914" stroke-width="2"/>
+                            <rect x="48" y="37" width="54" height="4" fill="#333" opacity="0.3"/>
+                            
+                            <!-- Decorative stars around slot -->
+                            <g class="sparkle-stars">
+                                <polygon points="40,30 42,35 37,35" fill="#FFD700" class="star star-1"/>
+                                <polygon points="110,30 112,35 107,35" fill="#FFD700" class="star star-2"/>
+                                <polygon points="35,25 38,30 32,30" fill="#00A8FF" class="star star-3"/>
+                                <polygon points="115,25 118,30 112,30" fill="#00A8FF" class="star star-4"/>
+                            </g>
+                            
+                            <!-- Papers coming out (showing activity) -->
+                            <g class="flying-suggestions">
+                                <rect x="50" y="20" width="12" height="16" fill="#FFF" stroke="#333" stroke-width="1" rx="1" transform="rotate(-20 56 28)" class="suggestion-paper suggestion-1"/>
+                                <rect x="85" y="18" width="14" height="18" fill="#FFFACD" stroke="#333" stroke-width="1" rx="1" transform="rotate(15 92 27)" class="suggestion-paper suggestion-2"/>
+                            </g>
+                            
+                            <!-- Lock (showing it's secure) -->
+                            <g class="lock">
+                                <rect x="68" y="95" width="14" height="18" rx="2" fill="#FFD700" stroke="#8B6914" stroke-width="2"/>
+                                <circle cx="75" cy="104" r="3" fill="#333"/>
+                                <rect x="74" y="104" width="2" height="6" fill="#333"/>
+                            </g>
+                            
+                            <!-- Whimsical feet -->
+                            <ellipse cx="45" cy="128" rx="8" ry="4" fill="#2A5A0A"/>
+                            <ellipse cx="105" cy="128" rx="8" ry="4" fill="#2A5A0A"/>
+                            
+                            <!-- Label -->
+                            <text x="75" y="75" font-family="Comic Neue, cursive" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFF">IDEAS!</text>
+                        </svg>
+                    </div>
 
                     <p class="rhyme">
                         <em>"You have a name! You are a pro!<br>
@@ -153,12 +315,6 @@
                         You're not just reading anymore,<br>
                         You're a creator, through the door!"</em>
                     </p>
-                        A bug that fills me full of rage!<br>
-                        Do not just call me on the phone.<br>
-                        Create a Ticket! Make it clear!<br>
-                        Click New Issue. Make it bright!<br>
-                        Title it: 'The Anchor is Tight!'"</em>
-                    </p>
 
                     <div class="mission-box">
                         <h3>Your Mission:</h3>
@@ -168,7 +324,9 @@
                             <li>Title it: <strong>"The Anchor is Tight"</strong> (or include those words).</li>
                             <li>Write a brief description of the "problem" (any message is fine!).</li>
                             <li>Submit the issue.</li>
-                            <li>Click the button below.</li>
+                            <li><strong>Add a follow-up comment</strong> explaining what you expect next.</li>
+                            <li><strong>Close the issue</strong> with a short closing comment (what changed or why you're closing).</li>
+                            <li>Click the button below once it's closed.</li>
                         </ol>
                     </div>
 
@@ -176,20 +334,296 @@
                         → Open New Issue in GitHub
                     </a>
 
-                    <button type="button" id="check-level-2" class="level-button button-primary">I Caught The Mouse!</button>
+                    <button type="button" id="check-level-2" class="level-button button-primary">I Opened and Closed It!</button>
                     <div id="level-2-error" class="error-msg" role="alert" aria-live="assertive"></div>
 
                     <details class="hint">
                         <summary>Need a hint?</summary>
-                        <p>Just like Level 1, GitHub's search can take 30-60 seconds. If it doesn't find your issue right away, wait and try again!</p>
+                        <p>Just like Level 1, GitHub's search can take 30-60 seconds. If it doesn't find your issue right away, wait and try again! Be sure the issue is <strong>closed</strong> and includes your follow-up comment.</p>
                     </details>
                 </div>
             </section>
 
-            <!-- LEVEL 3: The GNU (License Check) -->
+            <!-- LEVEL 3: Edit the Title (First Edit) -->
             <section id="level-3" class="seuss-card level-card" aria-labelledby="level-3-title" hidden>
                 <div class="card-content">
-                    <h2 id="level-3-title" class="level-title">Level 3: The Wise GNU</h2>
+                    <h2 id="level-3-title" class="level-title">Level 3: The Title Edit</h2>
+
+                    <p class="rhyme">
+                        <em>"Now that your issue is created and done,<br>
+                        Can you improve it? Oh what fun!<br>
+                        Edit the title! Make it shine!<br>
+                        Add a version, make it fine!<br>
+                        'Twas written fast, but now, you see,<br>
+                        You can perfect it—one, two, three!"</em>
+                    </p>
+
+                    <div class="mission-box">
+                        <h3>Your Mission:</h3>
+                        <ol>
+                            <li>Find your closed issue with "Anchor" or "Tight" in the title.</li>
+                            <li>Click the pencil icon to edit the title.</li>
+                            <li>Add <strong>"(v2)"</strong> to the end, or change something to improve it.</li>
+                            <li>Click "Update" to save the change.</li>
+                            <li>Click the button below.</li>
+                        </ol>
+                    </div>
+
+                    <p class="permission-note">
+                        💡 <strong>Note:</strong> You can only edit issues you created yourself. In shared projects, the author can edit anytime!
+                    </p>
+
+                    <button type="button" id="check-level-3" class="level-button button-primary">I Updated the Title!</button>
+                    <div id="level-3-error" class="error-msg" role="alert" aria-live="assertive"></div>
+
+                    <details class="hint">
+                        <summary>Need a hint?</summary>
+                        <p>Go to your issue. At the top right of the title, you'll see a pencil icon. Click it to edit. Make any change—add "(v2)", fix a typo, anything! The important part is that you've updated it.</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- LEVEL 4: Edit the Body (Iteration) -->
+            <section id="level-4" class="seuss-card level-card" aria-labelledby="level-4-title" hidden>
+                <div class="card-content">
+                    <h2 id="level-4-title" class="level-title">Level 4: The Body Edit</h2>
+
+                    <p class="rhyme">
+                        <em>"The title is polished! Splendid and bright!<br>
+                        But what of the body? The description? Not quite!<br>
+                        Edit that too! Add more detail!<br>
+                        Make your issue tell the full tale!<br>
+                        Iteration is learning—you'll see, you'll see,<br>
+                        Every edit makes it better, more clear to me!"</em>
+                    </p>
+
+                    <div class="mission-box">
+                        <h3>Your Mission:</h3>
+                        <ol>
+                            <li>Go back to your issue.</li>
+                            <li>Click the pencil icon on the <strong>description body</strong> (below the title).</li>
+                            <li>Add more details, or reword what you wrote before.</li>
+                            <li>Click "Update" to save.</li>
+                            <li>Click the button below.</li>
+                        </ol>
+                    </div>
+
+                    <p class="permission-note">
+                        💡 <strong>Learning moment:</strong> In real projects, you'll edit descriptions as you learn more. That's normal!
+                    </p>
+
+                    <button type="button" id="check-level-4" class="level-button button-primary">I Rewrote the Description!</button>
+                    <div id="level-4-error" class="error-msg" role="alert" aria-live="assertive"></div>
+
+                    <details class="hint">
+                        <summary>Need a hint?</summary>
+                        <p>The description is the main text of the issue (below the title). Look for the pencil icon next to it. Edit it the same way you edited the title—make any improvement!</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- LEVEL 5: Edit a Comment (Muscle Memory) -->
+            <section id="level-5" class="seuss-card level-card" aria-labelledby="level-5-title" hidden>
+                <div class="card-content">
+                    <h2 id="level-5-title" class="level-title">Level 5: The Comment Tweak</h2>
+
+                    <p class="rhyme">
+                        <em>"You've edited the issue, top and bottom!<br>
+                        But what of the comments? Don't you forget 'em!<br>
+                        Edit your comments too, oh friend!<br>
+                        Fix a typo, or add to the end!<br>
+                        Comments can change—you'll learn, you'll grow,<br>
+                        And that's what makes a project flow!"</em>
+                    </p>
+
+                    <div class="mission-box">
+                        <h3>Your Mission:</h3>
+                        <ol>
+                            <li>Scroll to one of <strong>your comments</strong> on the issue.</li>
+                            <li>Click the three dots (⋯) next to your comment.</li>
+                            <li>Click <strong>Edit</strong>.</li>
+                            <li>Make a small change (fix a typo, add a word, anything!).</li>
+                            <li>Click "Update comment".</li>
+                            <li>Click the button below.</li>
+                        </ol>
+                    </div>
+
+                    <p class="permission-note">
+                        💡 <strong>Learning moment:</strong> You can edit your own comments forever. Others can only edit theirs. That's GitHub's way of keeping conversations honest!
+                    </p>
+
+                    <button type="button" id="check-level-5" class="level-button button-primary">I Edited My Comment!</button>
+                    <div id="level-5-error" class="error-msg" role="alert" aria-live="assertive"></div>
+
+                    <details class="hint">
+                        <summary>Need a hint?</summary>
+                        <p>Find one of your comments (yours will have your username). Hover over it to see the three dots (⋯) menu. Click it and select "Edit". Change the text slightly and update!</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- LEVEL 6: Reopen & Clarify (State Transitions) -->
+            <section id="level-6" class="seuss-card level-card" aria-labelledby="level-6-title" hidden>
+                <div class="card-content">
+                    <h2 id="level-6-title" class="level-title">Level 6: The Reopening</h2>
+
+                    <p class="rhyme">
+                        <em>"The issue is closed—or so you thought!<br>
+                        But wait! You have a new question to wrought!<br>
+                        Reopen it now! Add a clarification!<br>
+                        Then close it again with a new explanation!<br>
+                        This is how real projects dance and flow,<br>
+                        Back and forth, as we learn and grow!"</em>
+                    </p>
+
+                    <div class="mission-box">
+                        <h3>Your Mission:</h3>
+                        <ol>
+                            <li>On your closed issue, click the <strong>Reopen issue</strong> button (top right).</li>
+                            <li>Add a new comment explaining why you reopened it (e.g., "Wait, I have more to add!").</li>
+                            <li>Then <strong>Close the issue</strong> again with a final comment.</li>
+                            <li>Click the button below.</li>
+                        </ol>
+                    </div>
+
+                    <p class="permission-note">
+                        💡 <strong>Learning moment:</strong> Issues bounce back and forth in real projects. That's not a failure—it's conversation!
+                    </p>
+
+                    <button type="button" id="check-level-6" class="level-button button-primary">I Reopened and Closed It!</button>
+                    <div id="level-6-error" class="error-msg" role="alert" aria-live="assertive"></div>
+
+                    <details class="hint">
+                        <summary>Need a hint?</summary>
+                        <p>At the bottom of your issue, you'll see the "Close issue" button. Click it to see options. There's a "Reopen issue" button. Click that, add a comment, then close it again!</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- LEVEL 7: Add a Label (Organization) -->
+            <section id="level-7" class="seuss-card level-card" aria-labelledby="level-7-title" hidden>
+                <div class="card-content">
+                    <h2 id="level-7-title" class="level-title">Level 7: The Label</h2>
+
+                    <p class="rhyme">
+                        <em>"A label, a label, a wonderful tag!<br>
+                        Organizes the issues—no more to drag!<br>
+                        'Bug' or 'Feature' or 'Help Wanted' true,<br>
+                        Every label tells what to do!<br>
+                        Add one now! Help others see,<br>
+                        What kind of issue this one will be!"</em>
+                    </p>
+
+                    <div class="mission-box">
+                        <h3>Your Mission:</h3>
+                        <ol>
+                            <li>On your issue, look for the <strong>Labels</strong> section (usually right sidebar).</li>
+                            <li>Click the gear icon or "Add labels".</li>
+                            <li>Choose any label (e.g., "bug", "feature", "documentation", or create a custom one).</li>
+                            <li>Click outside to confirm.</li>
+                            <li>Click the button below.</li>
+                        </ol>
+                    </div>
+
+                    <p class="permission-note">
+                        💡 <strong>Note:</strong> In your own fork, you can always add labels. In shared projects, admins may control which labels exist—that's normal!
+                    </p>
+
+                    <button type="button" id="check-level-7" class="level-button button-primary">I Added a Label!</button>
+                    <div id="level-7-error" class="error-msg" role="alert" aria-live="assertive"></div>
+
+                    <details class="hint">
+                        <summary>Need a hint?</summary>
+                        <p>Labels are on the right side of the issue (or sometimes a gear icon). Click to add one. If there are no predefined labels, you can type to create a new one!</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- LEVEL 8: Self-Assign (Taking Ownership) -->
+            <section id="level-8" class="seuss-card level-card" aria-labelledby="level-8-title" hidden>
+                <div class="card-content">
+                    <h2 id="level-8-title" class="level-title">Level 8: Taking Ownership</h2>
+
+                    <p class="rhyme">
+                        <em>"Who will fix this? Who will work?<br>
+                        Will you step up? Will you shirk?<br>
+                        Assign the issue to yourself!<br>
+                        Show you're taking it on—no one else!<br>
+                        This is what ownership looks like,<br>
+                        You're a contributor! You're the hike!"</em>
+                    </p>
+
+                    <div class="mission-box">
+                        <h3>Your Mission:</h3>
+                        <ol>
+                            <li>On your issue, find the <strong>Assignees</strong> section (right sidebar).</li>
+                            <li>Click it and select yourself (your username).</li>
+                            <li>Click outside to confirm.</li>
+                            <li>Click the button below.</li>
+                        </ol>
+                    </div>
+
+                    <p class="permission-note">
+                        💡 <strong>Note:</strong> In your fork, you can assign to yourself anytime. In shared projects, permissions vary. If you can't assign yourself, that's OK—it just means the project's admin controls that!
+                    </p>
+
+                    <button type="button" id="check-level-8" class="level-button button-primary">I Assigned It to Myself!</button>
+                    <div id="level-8-error" class="error-msg" role="alert" aria-live="assertive"></div>
+
+                    <details class="hint">
+                        <summary>Need a hint?</summary>
+                        <p>The "Assignees" section is usually on the right side of the issue. Click it, type your username, and select yourself. You're now "assigned" to this issue!</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- LEVEL 9: The GNU (License Check) -->
+            <section id="level-9" class="seuss-card level-card" aria-labelledby="level-9-title" hidden>
+                <div class="card-content">
+                    <h2 id="level-9-title" class="level-title">Level 9: The Wise GNU</h2>
+                    
+                    <div class="character-intro">
+                        <div class="character wise-gnu">
+                            <svg viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <!-- Wise GNU: Majestic, scholarly wildebeest with personality -->
+                                <!-- Body -->
+                                <ellipse cx="50" cy="75" rx="32" ry="38" fill="#4A3655" class="wobble-effect"/>
+                                <!-- Shaggy mane (Seussian style) -->
+                                <path d="M 35 50 Q 30 40 35 30" fill="#3A3655" stroke="#3A3655" stroke-width="3"/>
+                                <path d="M 50 45 Q 45 35 50 25" fill="#3A3655" stroke="#3A3655" stroke-width="3"/>
+                                <path d="M 65 50 Q 70 40 65 30" fill="#3A3655" stroke="#3A3655" stroke-width="3"/>
+                                <!-- Head -->
+                                <circle cx="50" cy="38" r="18" fill="#5A4665" class="wobble-effect"/>
+                                <!-- Snout -->
+                                <ellipse cx="50" cy="50" rx="12" ry="8" fill="#6A5675"/>
+                                <!-- Magnificent curved horns (Seussian style) -->
+                                <path d="M 30 28 Q 15 25 12 15" stroke="#3A3A3A" stroke-width="4" fill="none" stroke-linecap="round"/>
+                                <path d="M 70 28 Q 85 25 88 15" stroke="#3A3A3A" stroke-width="4" fill="none" stroke-linecap="round"/>
+                                <!-- Inner horn detail -->
+                                <path d="M 30 28 Q 18 26 15 18" stroke="#5A5A5A" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                <path d="M 70 28 Q 82 26 85 18" stroke="#5A5A5A" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                <!-- Eyes (wise and knowing) -->
+                                <circle cx="40" cy="35" r="3" fill="#FFF"/>
+                                <circle cx="60" cy="35" r="3" fill="#FFF"/>
+                                <circle cx="40" cy="35" r="1.5" fill="#3A3A3A"/>
+                                <circle cx="60" cy="35" r="1.5" fill="#3A3A3A"/>
+                                <!-- Intelligent expression (raised eyebrows) -->
+                                <path d="M 36 32 Q 40 30 44 32" stroke="#3A3A3A" stroke-width="1.5" fill="none"/>
+                                <path d="M 56 32 Q 60 30 64 32" stroke="#3A3A3A" stroke-width="1.5" fill="none"/>
+                                <!-- Beard stubble for wisdom -->
+                                <circle cx="48" cy="54" r="1" fill="#3A3A3A" opacity="0.6"/>
+                                <circle cx="50" cy="55" r="1" fill="#3A3A3A" opacity="0.6"/>
+                                <circle cx="52" cy="54" r="1" fill="#3A3A3A" opacity="0.6"/>
+                                <!-- Front legs -->
+                                <rect x="40" y="105" width="5" height="18" fill="#4A3655"/>
+                                <rect x="55" y="105" width="5" height="18" fill="#4A3655"/>
+                                <!-- Hooves -->
+                                <rect x="39" y="120" width="7" height="8" fill="#2A2A2A"/>
+                                <rect x="54" y="120" width="7" height="8" fill="#2A2A2A"/>
+                            </svg>
+                        </div>
+                        <p class="character-label">The Wise GNU</p>
+                    </div>
 
                     <div class="character-intro">
                         <div class="character wise-gnu">
@@ -255,20 +689,20 @@
                         </ol>
                     </div>
 
-                    <button type="button" id="check-level-3" class="level-button button-primary">The GNU Let Me Through!</button>
-                    <div id="level-3-error" class="error-msg" role="alert" aria-live="assertive"></div>
+                    <button type="button" id="check-level-9" class="level-button button-primary">The GNU Let Me Through!</button>
+                    <div id="level-9-error" class="error-msg" role="alert" aria-live="assertive"></div>
 
                     <details class="hint">
                         <summary>What is a License?</summary>
-                        <p>A License tells people how they can use your work. MIT is free and simple. Creative Commons is great for writing and art.</p>
+                        <p>A License tells people how they can use your work. MIT is free and simple. If you want a strong copyleft, start with <strong>GPL</strong> (or <strong>AGPL</strong> for networked apps). Creative Commons is great for writing and art.</p>
                     </details>
                 </div>
             </section>
 
-            <!-- LEVEL 4: The Proposal Train (Pull Request) -->
-            <section id="level-4" class="seuss-card level-card" aria-labelledby="level-4-title" hidden>
+            <!-- LEVEL 10: The Proposal Train (Pull Request) -->
+            <section id="level-10" class="seuss-card level-card" aria-labelledby="level-10-title" hidden>
                 <div class="card-content">
-                    <h2 id="level-4-title" class="level-title">Level 4: The Proposal Train</h2>
+                    <h2 id="level-10-title" class="level-title">Level 10: The Proposal Train</h2>
 
                     <p class="rhyme">
                         <em>"The Train is here! The whistle blows!<br>
@@ -296,8 +730,8 @@
                         → Fork the Repository
                     </a>
 
-                    <button type="button" id="check-level-4" class="level-button button-primary">I Stopped The Train!</button>
-                    <div id="level-4-error" class="error-msg" role="alert" aria-live="assertive"></div>
+                    <button type="button" id="check-level-10" class="level-button button-primary">I Stopped The Train!</button>
+                    <div id="level-10-error" class="error-msg" role="alert" aria-live="assertive"></div>
 
                     <details class="hint">
                         <summary>What is a Pull Request?</summary>
@@ -306,7 +740,403 @@
                 </div>
             </section>
 
-            <!-- VICTORY SCREEN -->
+            <!-- LEVEL 11: Fork the Repository -->
+            <section id="level-11" class="seuss-card level-card" aria-labelledby="level-11-title" hidden>
+                <div class="card-content">
+                    <h2 id="level-11-title" class="level-title">Level 11: The Fork in the Road</h2>
+                    <!-- Forking Tree Decoration -->
+                    <div class="forking-tree" aria-hidden="true">
+                        <svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg" class="fork-tree-svg">
+                            <!-- Ground -->
+                            <ellipse cx="100" cy="175" rx="90" ry="8" fill="#4A7C59" opacity="0.3"/>
+                            
+                            <!-- Main Trunk -->
+                            <path d="M 95 175 Q 93 140 95 100 L 105 100 Q 107 140 105 175 Z" fill="#8B4513" stroke="#654321" stroke-width="2"/>
+                            
+                            <!-- Fork Point (where it splits) -->
+                            <circle cx="100" cy="100" r="8" fill="#FFD700" stroke="#8B6914" stroke-width="2" class="fork-point"/>
+                            <text x="100" y="105" font-family="Comic Neue, cursive" font-size="10" font-weight="bold" text-anchor="middle" fill="#333">FORK!</text>
+                            
+                            <!-- Left Branch (Original) -->
+                            <g class="original-branch">
+                                <path d="M 95 100 Q 60 90 40 70" stroke="#8B4513" stroke-width="8" fill="none" stroke-linecap="round"/>
+                                <!-- Leaves (original - purple) -->
+                                <circle cx="35" cy="65" r="18" fill="#9370DB" opacity="0.8"/>
+                                <circle cx="25" cy="70" r="15" fill="#9370DB" opacity="0.8"/>
+                                <circle cx="45" cy="68" r="16" fill="#9370DB" opacity="0.8"/>
+                                <circle cx="30" cy="55" r="14" fill="#8A2BE2" opacity="0.9"/>
+                                <!-- Label -->
+                                <text x="35" y="70" font-family="Comic Neue, cursive" font-size="8" font-weight="bold" text-anchor="middle" fill="#FFF">Original</text>
+                            </g>
+                            
+                            <!-- Right Branch (Your Fork) -->
+                            <g class="fork-branch">
+                                <path d="M 105 100 Q 140 90 160 70" stroke="#8B4513" stroke-width="8" fill="none" stroke-linecap="round"/>
+                                <!-- Leaves (your fork - green) -->
+                                <circle cx="165" cy="65" r="18" fill="#7FD656" opacity="0.8"/>
+                                <circle cx="175" cy="70" r="15" fill="#7FD656" opacity="0.8"/>
+                                <circle cx="155" cy="68" r="16" fill="#7FD656" opacity="0.8"/>
+                                <circle cx="170" cy="55" r="14" fill="#6BC043" opacity="0.9"/>
+                                <!-- Label with sparkles -->
+                                <text x="165" y="70" font-family="Comic Neue, cursive" font-size="8" font-weight="bold" text-anchor="middle" fill="#FFF">Yours!</text>
+                                <polygon points="185,55 187,60 182,60" fill="#FFD700" class="sparkle"/>
+                                <polygon points="150,50 152,55 147,55" fill="#FFD700" class="sparkle"/>
+                            </g>
+                            
+                            <!-- Connecting Arrows (showing bidirectional sync) -->
+                            <g class="sync-arrows" opacity="0.6">
+                                <path d="M 45 75 Q 100 85 155 75" stroke="#00A8FF" stroke-width="2" fill="none" stroke-dasharray="4,4" class="sync-line"/>
+                                <polygon points="153,73 158,75 153,77" fill="#00A8FF"/>
+                                <polygon points="47,77 42,75 47,73" fill="#00A8FF"/>
+                            </g>
+                            
+                            <!-- Seussian Grass Tufts -->
+                            <g class="grass-tufts">
+                                <path d="M 20 175 Q 22 165 20 160" stroke="#4A7C59" stroke-width="3" fill="none"/>
+                                <path d="M 25 175 Q 27 167 25 162" stroke="#4A7C59" stroke-width="3" fill="none"/>
+                                <path d="M 170 175 Q 172 165 170 160" stroke="#4A7C59" stroke-width="3" fill="none"/>
+                                <path d="M 175 175 Q 177 167 175 162" stroke="#4A7C59" stroke-width="3" fill="none"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <p class="rhyme">
+                        <em>"To make your own changes, you'll need your own space,<br>
+                        A fork is a copy—your own coding place!<br>
+                        Click Fork on the repo, it's simple and quick,<br>
+                        Now you have your own version to edit and pick!"</em>
+                    </p>
+
+                    <div class="mission-box">
+                        <h3>Your Mission:</h3>
+                        <ol>
+                            <li>Go to the <strong>CivicActions/git-goat-gazette</strong> repository</li>
+                            <li>Click the <strong>"Fork"</strong> button in the top-right corner</li>
+                            <li>Wait for GitHub to create your fork</li>
+                            <li>You'll be redirected to your fork (it will show "forked from...")</li>
+                            <li>Click the button below to verify</li>
+                        </ol>
+                    </div>
+
+                    <a href="https://github.com/CivicActions/git-goat-gazette" class="action-link" target="_blank" rel="noopener">
+                        → Go to Repository
+                    </a>
+
+                    <button type="button" id="check-level-11" class="level-button button-primary">I Forked the Repo!</button>
+                    <div id="level-11-error" class="error-msg" role="alert" aria-live="assertive"></div>
+
+                    <details class="hint">
+                        <summary>Need a hint?</summary>
+                        <p>The Fork button is at the top-right of the repository page, next to Star and Watch. After clicking, GitHub creates a copy under your account (username/git-goat-gazette). If you already forked it, that's perfect!</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- LEVEL 12: Web Edit a File -->
+            <section id="level-12" class="seuss-card level-card" aria-labelledby="level-12-title" hidden>
+                <div class="card-content">
+                    <h2 id="level-12-title" class="level-title">Level 12: The Web Editor's Delight</h2>
+
+                    <p class="rhyme">
+                        <em>"Now in YOUR fork, make a change right away,<br>
+                        No terminal needed—use the web's easy way!<br>
+                        Click on a file, then the pencil you'll see,<br>
+                        Edit it there, as simple as can be!"</em>
+                    </p>
+
+                    <div class="mission-box">
+                        <h3>Your Mission:</h3>
+                        <ol>
+                            <li>Go to <strong>your fork</strong> (github.com/YOUR-USERNAME/git-goat-gazette)</li>
+                            <li>Click on the <strong>README.md</strong> file</li>
+                            <li>Click the pencil icon (✏️) to edit</li>
+                            <li>Add a line: "Edited by [your-name]!"</li>
+                            <li>Scroll down and click <strong>"Commit changes"</strong></li>
+                            <li>Click the button below to verify</li>
+                        </ol>
+                    </div>
+
+                    <p class="permission-note">
+                        💡 <strong>Note:</strong> You're editing YOUR fork, not the original repo. That's why you have permission to commit directly!
+                    </p>
+
+                    <button type="button" id="check-level-12" class="level-button button-primary">I Edited the File!</button>
+                    <div id="level-12-error" class="error-msg" role="alert" aria-live="assertive"></div>
+
+                    <details class="hint">
+                        <summary>Need a hint?</summary>
+                        <p>Make sure you're in YOUR fork (the URL should be github.com/YOUR-USERNAME/git-goat-gazette). The pencil icon is at the top-right of the file view, next to the "Raw" and "Blame" buttons.</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- LEVEL 13: Create a Branch (Optional) -->
+            <section id="level-13" class="seuss-card level-card optional-stage" aria-labelledby="level-13-title" hidden>
+                <div class="card-content">
+                    <h2 id="level-13-title" class="level-title">Level 13: The Branch of Possibility</h2>
+
+                    <p class="rhyme">
+                        <em>"Branches let you work on features anew,<br>
+                        Without changing main—it's quite clever, it's true!<br>
+                        Create a branch, give it a name that's just right,<br>
+                        Then make your changes—keep main out of sight!"</em>
+                    </p>
+
+                    <div class="mission-box">
+                        <h3>Your Mission (Optional):</h3>
+                        <ol>
+                            <li>In your fork, click the branch dropdown (shows "main" or "master")</li>
+                            <li>Type a new branch name: "my-updates" or "add-features"</li>
+                            <li>Click <strong>"Create branch: ..."</strong></li>
+                            <li>You're now on your new branch!</li>
+                            <li>Click the button below to verify (or skip)</li>
+                        </ol>
+                    </div>
+
+                    <p class="permission-note">
+                        ℹ️ <strong>Optional Stage:</strong> If you prefer to work directly on main, you can skip this level. Branching is best practice for larger projects!
+                    </p>
+
+                    <button type="button" id="check-level-13" class="level-button button-primary">I Created a Branch!</button>
+                    <button type="button" id="skip-level-13" class="level-button button-secondary">Skip This Level</button>
+                    <div id="level-13-error" class="error-msg" role="alert" aria-live="assertive"></div>
+
+                    <details class="hint">
+                        <summary>Need a hint?</summary>
+                        <p>The branch selector is near the top-left of the repo page. Click it, type a name (like "my-edits"), and GitHub will offer to create the branch. Branch names often use hyphens (my-branch) or slashes (feature/my-feature).</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- LEVEL 14: Make a Commit -->
+            <section id="level-14" class="seuss-card level-card" aria-labelledby="level-14-title" hidden>
+                <div class="card-content">
+                    <h2 id="level-14-title" class="level-title">Level 14: The Commit Message</h2>
+
+                    <p class="rhyme">
+                        <em>"A commit saves your work with a message so clear,<br>
+                        Tell future you what you changed—make it sincere!<br>
+                        'Fix typo' or 'Add feature'—keep it concise,<br>
+                        Good commit messages are really quite nice!"</em>
+                    </p>
+
+                    <div class="mission-box">
+                        <h3>Your Mission:</h3>
+                        <ol>
+                            <li>In your fork, edit another file (or create a new one)</li>
+                            <li>When committing, write a <strong>clear message</strong></li>
+                            <li>Good: "Add contributor badge to README"</li>
+                            <li>Bad: "update" or "fix"</li>
+                            <li>Commit the change</li>
+                            <li>Click the button below to verify</li>
+                        </ol>
+                    </div>
+
+                    <div class="template-suggestion">
+                        <p><strong>Commit Message Templates:</strong></p>
+                        <ul>
+                            <li>"Add [feature/file/section]"</li>
+                            <li>"Fix [typo/bug/issue] in [file]"</li>
+                            <li>"Update [file] with [change]"</li>
+                            <li>"Remove [outdated/unused] [thing]"</li>
+                        </ul>
+                    </div>
+
+                    <button type="button" id="check-level-14" class="level-button button-primary">I Made a Commit!</button>
+                    <div id="level-14-error" class="error-msg" role="alert" aria-live="assertive"></div>
+
+                    <details class="hint">
+                        <summary>Need a hint?</summary>
+                        <p>Edit any file in your fork (README.md is easiest), scroll to the commit form at the bottom, write a descriptive message (3-7 words), and click "Commit changes". We'll check if you have at least 2 commits in your fork!</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- LEVEL 15: Open a Pull Request -->
+            <section id="level-15" class="seuss-card level-card" aria-labelledby="level-15-title" hidden>
+                <div class="card-content">
+                    <h2 id="level-15-title" class="level-title">Level 15: The Pull Request Proposal</h2>
+                    <!-- Collaborative Boat Decoration -->
+                    <div class="collab-boat" aria-hidden="true">
+                        <svg viewBox="0 0 220 160" xmlns="http://www.w3.org/2000/svg" class="boat-svg">
+                            <!-- Waves -->
+                            <g class="waves">
+                                <path d="M 0 130 Q 15 125 30 130 T 60 130 T 90 130 T 120 130 T 150 130 T 180 130 T 210 130" 
+                                      stroke="#00A8FF" stroke-width="2" fill="none" opacity="0.6" class="wave wave-1"/>
+                                <path d="M 0 140 Q 20 135 40 140 T 80 140 T 120 140 T 160 140 T 200 140" 
+                                      stroke="#44AAFF" stroke-width="2" fill="none" opacity="0.4" class="wave wave-2"/>
+                            </g>
+                            
+                            <!-- Boat Hull -->
+                            <path d="M 40 110 Q 35 130 50 130 L 170 130 Q 185 130 180 110 Z" 
+                                  fill="var(--color-boat, #44AAFF)" stroke="#004488" stroke-width="3"/>
+                            
+                            <!-- Deck -->
+                            <rect x="50" y="105" width="120" height="8" rx="2" fill="#8B4513" stroke="#654321" stroke-width="2"/>
+                            
+                            <!-- Mast -->
+                            <rect x="108" y="30" width="4" height="78" fill="#8B4513" stroke="#654321" stroke-width="1"/>
+                            
+                            <!-- Sail (PR symbol) -->
+                            <path d="M 112 35 Q 150 55 112 75 Z" fill="#7FD656" stroke="#2A5A0A" stroke-width="2" opacity="0.9"/>
+                            
+                            <!-- PR Icon on Sail -->
+                            <g transform="translate(120, 50)">
+                                <circle cx="0" cy="0" r="8" fill="#FFD700" stroke="#8B6914" stroke-width="1"/>
+                                <text x="0" y="4" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#333">PR</text>
+                            </g>
+                            
+                            <!-- Pennant Flag -->
+                            <polygon points="112,32 130,38 112,44" fill="#FF00FF" stroke="#8B008B" stroke-width="1" class="pennant"/>
+                            
+                            <!-- Crew (collaboration) -->
+                            <g class="crew">
+                                <!-- Person 1 (You) -->
+                                <circle cx="70" cy="95" r="6" fill="#FFD700" stroke="#8B6914" stroke-width="1"/>
+                                <circle cx="70" cy="88" r="4" fill="#FFB6C1"/>
+                                <text x="70" y="123" font-family="Comic Neue, cursive" font-size="7" text-anchor="middle" fill="#333">You</text>
+                                
+                                <!-- Person 2 (Maintainer) -->
+                                <circle cx="150" cy="95" r="6" fill="#00A8FF" stroke="#004488" stroke-width="1"/>
+                                <circle cx="150" cy="88" r="4" fill="#FFB6C1"/>
+                                <text x="150" y="123" font-family="Comic Neue, cursive" font-size="7" text-anchor="middle" fill="#333">Maintainer</text>
+                            </g>
+                            
+                            <!-- Oars (working together) -->
+                            <g class="oars">
+                                <ellipse cx="55" cy="115" rx="15" ry="4" fill="#8B4513" stroke="#654321" stroke-width="1" class="oar oar-left"/>
+                                <ellipse cx="165" cy="115" rx="15" ry="4" fill="#8B4513" stroke="#654321" stroke-width="1" class="oar oar-right"/>
+                            </g>
+                            
+                            <!-- Sun (bright future) -->
+                            <g class="sun">
+                                <circle cx="190" cy="20" r="12" fill="#FFD700" stroke="#FF8C00" stroke-width="2"/>
+                                <line x1="190" y1="5" x2="190" y2="10" stroke="#FFD700" stroke-width="2"/>
+                                <line x1="205" y1="20" x2="200" y2="20" stroke="#FFD700" stroke-width="2"/>
+                                <line x1="190" y1="35" x2="190" y2="30" stroke="#FFD700" stroke-width="2"/>
+                                <line x1="175" y1="20" x2="180" y2="20" stroke="#FFD700" stroke-width="2"/>
+                                <line x1="199" y1="11" x2="196" y2="14" stroke="#FFD700" stroke-width="2"/>
+                                <line x1="199" y1="29" x2="196" y2="26" stroke="#FFD700" stroke-width="2"/>
+                                <line x1="181" y1="29" x2="184" y2="26" stroke="#FFD700" stroke-width="2"/>
+                                <line x1="181" y1="11" x2="184" y2="14" stroke="#FFD700" stroke-width="2"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <p class="rhyme">
+                        <em>"Now propose your changes back to the source,<br>
+                        A Pull Request says 'Please merge this, of course!'<br>
+                        Open a PR, explain what you've done,<br>
+                        Collaboration and sharing—it's really quite fun!"</em>
+                    </p>
+
+                    <div class="mission-box">
+                        <h3>Your Mission:</h3>
+                        <ol>
+                            <li>Go to YOUR fork on GitHub</li>
+                            <li>Click <strong>"Contribute"</strong> → "Open pull request" (or "Compare & pull request")</li>
+                            <li>Make sure <strong>base</strong> is CivicActions/git-goat-gazette and <strong>head</strong> is YOUR fork</li>
+                            <li>Write a title: "Add my updates" or similar</li>
+                            <li>Write a description explaining your changes</li>
+                            <li>Click <strong>"Create pull request"</strong></li>
+                            <li>Click the button below to verify</li>
+                        </ol>
+                    </div>
+
+                    <p class="permission-note">
+                        💡 <strong>Note:</strong> This creates a PROPOSAL, not an automatic merge. The repo maintainers will review your PR.
+                    </p>
+
+                    <button type="button" id="check-level-15" class="level-button button-primary">I Opened a PR!</button>
+                    <div id="level-15-error" class="error-msg" role="alert" aria-live="assertive"></div>
+
+                    <details class="hint">
+                        <summary>Need a hint?</summary>
+                        <p>After making commits in your fork, GitHub often shows a yellow banner "Compare & pull request". Click it! Or go to Pull Requests tab → New pull request → compare across forks. Select base: CivicActions/git-goat-gazette, head: YOUR-USERNAME/git-goat-gazette.</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- LEVEL 16: Comment on Your PR -->
+            <section id="level-16" class="seuss-card level-card" aria-labelledby="level-16-title" hidden>
+                <div class="card-content">
+                    <h2 id="level-16-title" class="level-title">Level 16: The PR Conversation</h2>
+
+                    <p class="rhyme">
+                        <em>"PRs aren't silent—they're places to chat,<br>
+                        Leave comments, ask questions, discuss this and that!<br>
+                        Add a comment to YOUR PR right now,<br>
+                        Show you know how to collaborate—wow!"</em>
+                    </p>
+
+                    <div class="mission-box">
+                        <h3>Your Mission:</h3>
+                        <ol>
+                            <li>Go to the PR you just opened</li>
+                            <li>Scroll to the comment box at the bottom</li>
+                            <li>Add a comment (e.g., "Ready for review!" or "Let me know if changes needed")</li>
+                            <li>Click <strong>"Comment"</strong></li>
+                            <li>Click the button below to verify</li>
+                        </ol>
+                    </div>
+
+                    <div class="template-suggestion">
+                        <p><strong>PR Comment Ideas:</strong></p>
+                        <ul>
+                            <li>"Ready for review! Let me know if you need anything."</li>
+                            <li>"I've updated the README as discussed."</li>
+                            <li>"Happy to make changes if needed!"</li>
+                            <li>"This is my first PR—feedback welcome!"</li>
+                        </ul>
+                    </div>
+
+                    <button type="button" id="check-level-16" class="level-button button-primary">I Commented on My PR!</button>
+                    <div id="level-16-error" class="error-msg" role="alert" aria-live="assertive"></div>
+
+                    <details class="hint">
+                        <summary>Need a hint?</summary>
+                        <p>Find YOUR pull request at github.com/CivicActions/git-goat-gazette/pulls. Scroll down past the commits to see the comment box. Add any friendly message and click "Comment" (not "Close and comment").</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- LEVEL 17: Address Feedback -->
+            <section id="level-17" class="seuss-card level-card" aria-labelledby="level-17-title" hidden>
+                <div class="card-content">
+                    <h2 id="level-17-title" class="level-title">Level 17: The Feedback Loop</h2>
+
+                    <p class="rhyme">
+                        <em>"Feedback is a gift—don't fear it, embrace!<br>
+                        Make updates, push changes, improve at your pace.<br>
+                        Your PR gets better with each iteration,<br>
+                        Collaboration's the heart of open source creation!"</em>
+                    </p>
+
+                    <div class="mission-box">
+                        <h3>Your Mission:</h3>
+                        <ol>
+                            <li>Go back to your fork (not the original repo)</li>
+                            <li>Make another edit to the same file (or a new file)</li>
+                            <li>Commit the change with a message like "Address feedback"</li>
+                            <li>The commit will automatically appear in your PR!</li>
+                            <li>Check your PR to confirm the new commit shows up</li>
+                            <li>Click the button below to verify</li>
+                        </ol>
+                    </div>
+
+                    <p class="permission-note">
+                        ℹ️ <strong>Magic of PRs:</strong> Any commit you make to the branch in your fork automatically updates the PR. No need to create a new PR!
+                    </p>
+
+                    <button type="button" id="check-level-17" class="level-button button-primary">I Updated My PR!</button>
+                    <div id="level-17-error" class="error-msg" role="alert" aria-live="assertive"></div>
+
+                    <details class="hint">
+                        <summary>Need a hint?</summary>
+                        <p>Edit a file in YOUR fork, commit it to the same branch you used for the PR. Then check the PR page—you'll see "[your-username] added [number] commits". That's how you respond to feedback!</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- LEVEL 11+: Victory Screen -->
             <section id="victory" class="seuss-card victory-card" aria-labelledby="victory-title" hidden>
                 <div class="card-content victory-content">
                     <h2 id="victory-title" class="level-title">🎉 The Feast! 🎉</h2>
@@ -330,7 +1160,16 @@
                             <li>✅ Left a comment on an issue</li>
                             <li>✅ Created a new issue</li>
                             <li>✅ Added a LICENSE file</li>
-                            <li>✅ Made a Pull Request</li>
+                            <li>✅ Edited and reopened issues</li>
+                            <li>✅ Applied and removed labels</li>
+                            <li>✅ Assigned yourself to issues</li>
+                            <li>✅ Managed Pull Requests</li>
+                            <li>✅ Forked a repository</li>
+                            <li>✅ Made web edits</li>
+                            <li>✅ Created commits with clear messages</li>
+                            <li>✅ Opened and managed Pull Requests</li>
+                            <li>✅ Participated in PR discussions</li>
+                            <li>✅ Updated PRs based on feedback</li>
                         </ul>
 
                         <p>These are the core skills of collaborative development. You're ready to contribute to real projects!</p>

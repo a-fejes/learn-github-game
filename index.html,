@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Git-Goat's Gazette</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <a href="#game-card" class="skip-link">Skip to main content</a>
+
+    <div class="parallax-container" aria-hidden="true">
+        <div class="layer layer-back">
+            <svg viewBox="0 0 1000 500" preserveAspectRatio="none" style="width:100%; height:100%;">
+                <path d="M0,500 C200,400 300,450 500,350 C700,250 800,400 1000,300 L1000,500 L0,500 Z" fill="#CBEFEE"/>
+            </svg>
+        </div>
+        <div class="layer layer-mid">
+             <svg class="wobble-effect" style="position: absolute; bottom: 10%; left: 10%; width: 150px;" viewBox="0 0 200 400">
+                <path fill="#D35400" d="M90,400 C70,300 110,200 95,150 C80,100 100,50 100,50 L110,50 C110,50 130,100 115,150 C100,200 140,300 120,400 Z" />
+                <circle class="wobble-fast" fill="#8E44AD" cx="100" cy="50" r="60" />
+            </svg>
+            <svg class="wobble-effect" style="position: absolute; bottom: 15%; right: 15%; width: 120px;" viewBox="0 0 200 400">
+                <path fill="#D35400" d="M90,400 C70,300 110,200 95,150 C80,100 100,50 100,50 L110,50 C110,50 130,100 115,150 C100,200 140,300 120,400 Z" />
+                <circle class="wobble-fast" fill="#FF5722" cx="100" cy="50" r="60" />
+            </svg>
+        </div>
+    </div>
+
+    <main>
+        <div id="game-card" class="seuss-card" role="main">
+            
+            <header>
+                <h1>🐐 The Git-Goat's Gazette</h1>
+                <div id="status-bar" aria-live="polite">
+                    <span>Editor: <strong id="user-display">Guest</strong></span> | 
+                    <span>Pages Written: <strong id="score-display">0/4</strong></span>
+                </div>
+            </header>
+
+            <div id="level-container">
+
+                <section id="level-0" class="game-level active-level" aria-labelledby="h-lvl0">
+                    <h2 id="h-lvl0" tabindex="-1">The Messy Desk</h2>
+                    <div class="content-row">
+                        <div class="text-col">
+                            <p class="rhyme">
+                                "I do not like this GitHub thing!<br>
+                                It is for Coders! Not for Kings!<br><br>
+                                I write the Laws! I draw the Art!<br>
+                                I do not know where I should start.<br>
+                                But the Goat says: 'Type your <strong>Name</strong> below,<br>
+                                And watch the mess begin to go!'"
+                            </p>
+                        </div>
+                        <div class="char-col">
+                            <div class="char-placeholder gopher">🐹</div>
+                        </div>
+                    </div>
+                    <div class="interaction-area">
+                        <label for="username-input" class="visually-hidden">GitHub Username</label>
+                        <input type="text" id="username-input" class="game-input game-interactive" placeholder="GitHub Username" data-cam-x="-50px" data-trigger-char="gopher-0">
+                        <button onclick="startGame()" class="game-btn game-interactive" data-cam-x="50px">Start the Presses!</button>
+                    </div>
+                </section>
+
+                <section id="level-1" class="game-level hidden" aria-labelledby="h-lvl1">
+                    <h2 id="h-lvl1" tabindex="-1">The Suggestion Box</h2>
+                    <p class="rhyme">
+                        "You see this House? It holds your text.<br>
+                        But look what happens next!<br>
+                        A reader found a tiny mistake.<br>
+                        A typo they would like to break!<br><br>
+                        Go to the <strong>Issues</strong> tab, my friend.<br>
+                        Leave a comment! Click send!"
+                    </p>
+                    <div class="interaction-area">
+                        <a href="#" id="link-issue-1" target="_blank" class="game-link game-interactive">Go to Suggestion Box (Issue #1)</a>
+                        <button onclick="checkLevel1()" class="game-btn game-interactive">I Left a Note!</button>
+                    </div>
+                    <p class="error-msg" id="error-1" aria-live="assertive"></p>
+                </section>
+
+                <section id="level-2" class="game-level hidden" aria-labelledby="h-lvl2">
+                    <h2 id="h-lvl2" tabindex="-1">The Red Pen</h2>
+                    <p class="rhyme">
+                        "Now YOU have found a missing page!<br>
+                        A graph that does not fit the stage!<br>
+                        Do not sit there and moan and groan.<br>
+                        Create a <strong>Ticket</strong> of your own!<br><br>
+                        Click 'New Issue'. Type the plan.<br>
+                        Title it <strong>'Fix Chapter Three'</strong>, if you can!"
+                    </p>
+                    <div class="interaction-area">
+                        <a href="#" id="link-issue-new" target="_blank" class="game-link game-interactive">Open New Ticket</a>
+                        <button onclick="checkLevel2()" class="game-btn game-interactive">I Used the Red Pen!</button>
+                    </div>
+                    <p class="error-msg" id="error-2" aria-live="assertive"></p>
+                    <p class="hint-text"><em>(Wait 30 seconds after posting, the Gopher is slow to read!)</em></p>
+                </section>
+
+                <section id="level-3" class="game-level hidden" aria-labelledby="h-lvl3">
+                    <h2 id="h-lvl3" tabindex="-1">The Wise GNU</h2>
+                    <div class="content-row">
+                        <div class="text-col">
+                            <p class="rhyme">
+                                "Stop right there! You cannot pass!<br>
+                                I am the <strong>GNU</strong>, upon the grass.<br>
+                                You wrote a Book. You made a Map.<br>
+                                But is it free? Or is it a trap?<br><br>
+                                Create a file named <code>LICENSE</code> now.<br>
+                                Pick 'MIT' to save the cow!"
+                            </p>
+                        </div>
+                        <div class="char-col">
+                            <div class="char-placeholder gnu">🐃</div>
+                        </div>
+                    </div>
+                    <div class="interaction-area">
+                        <a href="#" id="link-new-file" target="_blank" class="game-link game-interactive">Create License File</a>
+                        <button onclick="checkLevel3()" class="game-btn game-interactive">I Made It Legal!</button>
+                    </div>
+                    <p class="error-msg" id="error-3" aria-live="assertive"></p>
+                </section>
+
+                <section id="level-4" class="game-level hidden" aria-labelledby="h-lvl4">
+                    <h2 id="h-lvl4" tabindex="-1">The Proposal Train</h2>
+                    <p class="rhyme">
+                        "The Train is here! The whistle blows!<br>
+                        It carries Words and Art and Prose!<br>
+                        You want to change the 'Final Draft'.<br>
+                        But changing originals is daft!<br><br>
+                        <strong>Fork</strong> the repo! Make a switch!<br>
+                        Then send a <strong>Pull Request</strong> to pitch!"
+                    </p>
+                    <div class="interaction-area">
+                        <a href="#" id="link-repo" target="_blank" class="game-link game-interactive">Go to Project Folder</a>
+                        <button onclick="checkLevel4()" class="game-btn game-interactive">I Boarded the Train!</button>
+                    </div>
+                    <p class="error-msg" id="error-4" aria-live="assertive"></p>
+                </section>
+
+                <section id="level-victory" class="game-level hidden" aria-labelledby="h-win">
+                    <h2 id="h-win" tabindex="-1">🎉 Published! 🎉</h2>
+                    <p class="rhyme">
+                        "Say! I like this GitHub stuff!<br>
+                        I do! I like it, sure enough!<br>
+                        I like to Fork. I like to Clone.<br>
+                        I like to write when I'm alone!<br><br>
+                        You fixed the mess! You saved the day!<br>
+                        You are a <strong>Winner</strong>, shout Hooray!"
+                    </p>
+                    <button onclick="window.location.reload()" class="game-btn">Play Again</button>
+                </section>
+
+            </div>
+
+            <details class="glossary-paper">
+                <summary>🤔 What is the Goat talking about?</summary>
+                <table class="glossary-table">
+                    <tr>
+                        <th>Goat's Word</th>
+                        <th>Tech Word</th>
+                        <th>Human Meaning</th>
+                    </tr>
+                    <tr>
+                        <td>Project Folder</td>
+                        <td><strong>Repository</strong></td>
+                        <td>The cloud folder tracking every change.</td>
+                    </tr>
+                    <tr>
+                        <td>Suggestion Box</td>
+                        <td><strong>Issue</strong></td>
+                        <td>A chat thread about a problem.</td>
+                    </tr>
+                    <tr>
+                        <td>Proposal</td>
+                        <td><strong>Pull Request</strong></td>
+                        <td>Asking to merge your edits into the main book.</td>
+                    </tr>
+                    <tr>
+                        <td>Personal Copy</td>
+                        <td><strong>Fork</strong></td>
+                        <td>A copy you can mess up without breaking the real one.</td>
+                    </tr>
+                </table>
+            </details>
+        </div>
+    </main>
+
+    <script src="game.js"></script>
+</body>
+</html>

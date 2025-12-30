@@ -140,6 +140,35 @@ body {
     margin: 0;
 }
 
+.connection-status {
+    margin-top: var(--space-sm);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background: rgba(0, 0, 0, 0.15);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    background: var(--color-seuss-coral);
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.status-online {
+    background: #1DB954;
+}
+
+.status-offline {
+    background: var(--color-seuss-coral);
+}
+
 
 /* =========================================
    Main Container & Stages
@@ -892,5 +921,331 @@ a:focus {
 @media (prefers-reduced-motion: reduce) {
     .stage-container::before {
         animation: none;
+    }
+}
+
+/* =========================================
+   Seussian SVG Decorations
+   ========================================= */
+
+/* Seussian Train (Journey Progress) */
+.seuss-train {
+    max-width: 400px;
+    margin: 1rem auto;
+    opacity: 0.9;
+}
+
+.train-svg {
+    width: 100%;
+    height: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .smoke {
+        animation: smokePuff 3s ease-in-out infinite;
+    }
+    
+    .smoke-1 {
+        animation-delay: 0s;
+    }
+    
+    .smoke-2 {
+        animation-delay: 0.5s;
+    }
+    
+    .smoke-3 {
+        animation-delay: 1s;
+    }
+    
+    .wheels {
+        transform-origin: center;
+        animation: wheelSpin 2s linear infinite;
+    }
+}
+
+@keyframes smokePuff {
+    0%, 100% {
+        opacity: 0.7;
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        opacity: 0.3;
+        transform: translateY(-10px) scale(1.2);
+    }
+}
+
+@keyframes wheelSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Floating Papers (Level 0) */
+.floating-papers {
+    max-width: 300px;
+    margin: 1.5rem auto;
+    opacity: 0.85;
+}
+
+.papers-svg {
+    width: 100%;
+    height: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .paper-1 {
+        animation: floatPaper 4s ease-in-out infinite;
+        animation-delay: 0s;
+    }
+    
+    .paper-2 {
+        animation: floatPaper 3.5s ease-in-out infinite;
+        animation-delay: 0.5s;
+    }
+    
+    .paper-3 {
+        animation: floatPaper 4.2s ease-in-out infinite;
+        animation-delay: 1s;
+    }
+    
+    .paper-4 {
+        animation: floatPaper 3.8s ease-in-out infinite;
+        animation-delay: 1.5s;
+    }
+    
+    .pencil {
+        animation: pencilRoll 3s ease-in-out infinite;
+    }
+}
+
+@keyframes floatPaper {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(2deg);
+    }
+}
+
+@keyframes pencilRoll {
+    0%, 100% {
+        transform: translateX(0) rotate(35deg);
+    }
+    50% {
+        transform: translateX(5px) rotate(40deg);
+    }
+}
+
+/* Suggestion Box (Level 1) */
+.suggestion-box-decoration {
+    max-width: 250px;
+    margin: 1.5rem auto;
+}
+
+.suggestion-box-svg {
+    width: 100%;
+    height: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .sparkle-stars .star {
+        animation: starTwinkle 2s ease-in-out infinite;
+    }
+    
+    .star-1 { animation-delay: 0s; }
+    .star-2 { animation-delay: 0.5s; }
+    .star-3 { animation-delay: 1s; }
+    .star-4 { animation-delay: 1.5s; }
+    
+    .suggestion-paper {
+        animation: paperFly 3s ease-in-out infinite;
+    }
+    
+    .suggestion-1 { animation-delay: 0s; }
+    .suggestion-2 { animation-delay: 1.5s; }
+}
+
+@keyframes starTwinkle {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.4;
+        transform: scale(0.7);
+    }
+}
+
+@keyframes paperFly {
+    0%, 100% {
+        transform: translateY(0) rotate(-20deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(-15deg);
+    }
+}
+
+/* Forking Tree (Level 11) */
+.forking-tree {
+    max-width: 350px;
+    margin: 1.5rem auto;
+}
+
+.fork-tree-svg {
+    width: 100%;
+    height: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .fork-point {
+        animation: forkPulse 2s ease-in-out infinite;
+    }
+    
+    .sparkle {
+        animation: starTwinkle 2s ease-in-out infinite;
+    }
+    
+    .sync-line {
+        animation: syncFlow 3s ease-in-out infinite;
+    }
+    
+    .grass-tufts path {
+        animation: grassSway 3s ease-in-out infinite;
+    }
+}
+
+@keyframes forkPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.15);
+        opacity: 0.8;
+    }
+}
+
+@keyframes syncFlow {
+    0%, 100% {
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dashoffset: 20;
+    }
+}
+
+@keyframes grassSway {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(2px);
+    }
+}
+
+/* Collaborative Boat (Level 15) */
+.collab-boat {
+    max-width: 350px;
+    margin: 1.5rem auto;
+}
+
+.boat-svg {
+    width: 100%;
+    height: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .wave {
+        animation: waveFlow 4s ease-in-out infinite;
+    }
+    
+    .wave-1 { animation-delay: 0s; }
+    .wave-2 { animation-delay: 0.5s; }
+    
+    .boat-svg .collab-boat > svg,
+    .collab-boat svg > *:not(.waves):not(.sun) {
+        animation: boatBob 3s ease-in-out infinite;
+    }
+    
+    .pennant {
+        transform-origin: 112px 32px;
+        animation: flagWave 2s ease-in-out infinite;
+    }
+    
+    .oar-left,
+    .oar-right {
+        animation: oarRow 2s ease-in-out infinite;
+    }
+    
+    .oar-right { animation-delay: 1s; }
+}
+
+@keyframes waveFlow {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+}
+
+@keyframes boatBob {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes flagWave {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(8deg);
+    }
+}
+
+@keyframes oarRow {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-10deg);
+    }
+}
+
+/* Responsive adjustments for decorations */
+@media (max-width: 768px) {
+    .seuss-train,
+    .floating-papers,
+    .suggestion-box-decoration,
+    .forking-tree,
+    .collab-boat {
+        max-width: 200px;
+        margin: 1rem auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    /* Disable all decorative animations for users who prefer reduced motion */
+    .smoke,
+    .wheels,
+    .paper-1, .paper-2, .paper-3, .paper-4,
+    .pencil,
+    .sparkle-stars .star,
+    .suggestion-paper,
+    .fork-point,
+    .sparkle,
+    .sync-line,
+    .grass-tufts path,
+    .wave,
+    .pennant,
+    .oar-left, .oar-right {
+        animation: none !important;
     }
 }
