@@ -1,0 +1,896 @@
+/* =========================================
+   The Git-Goat's Gazette
+   WCAG 2.2 AA Compliant Styling
+   ========================================= */
+
+/* CSS Variables: Accessible Color Palette */
+:root {
+    /* Background & Text */
+    --bg-paper: #FDF6E3;
+    --text-dark: #2A1A3F;
+    --text-muted: #555;
+
+    /* Primary Actions */
+    --color-primary: #1B5E20; /* Dark Green, 4.5:1 contrast */
+    --color-primary-hover: #0D3818;
+    --color-primary-focus: #FF5722; /* Orange focus ring */
+
+    /* Seussian Color Palette (more vibrant & playful) */
+    --color-accent-orange: #FF5722;
+    --color-accent-purple: #8E44AD;
+    --color-accent-teal: #1ABC9C;
+    --color-seuss-lime: #7FD656;
+    --color-seuss-pink: #FF1493;
+    --color-seuss-blue: #00A8FF;
+    --color-seuss-yellow: #FFD700;
+    --color-seuss-magenta: #FF00FF;
+    --color-seuss-coral: #FF6B6B;
+    --color-seuss-mint: #00D9A3;
+
+    /* Character Colors */
+    --color-gopher: #8B6F47;
+    --color-gnu: #4A3655;
+    --color-goat: #FFB347;
+    --color-train: #FF4444;
+    --color-boat: #44AAFF;
+
+    /* Spacing */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+
+    /* Font Stack (Fallback to system fonts) */
+    --font-display: 'Comic Neue', 'Chalkboard SE', 'Marker Felt', cursive, sans-serif;
+    --font-body: 'Comic Neue', 'Trebuchet MS', sans-serif;
+
+    /* Camera Position for Parallax */
+    --camera-x: 0;
+}
+
+
+/* =========================================
+   Reset & Accessibility
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-paper);
+    color: var(--text-dark);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Skip Link (Visible on Focus) */
+.skip-link {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    z-index: 999;
+    padding: var(--space-md);
+    background-color: var(--color-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.skip-link:focus {
+    top: var(--space-md);
+    left: var(--space-md);
+}
+
+/* Reduce Motion: Respect User Preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* =========================================
+   Header & Navigation
+   ========================================= */
+
+.site-header {
+    background: linear-gradient(135deg, var(--color-accent-purple) 0%, var(--color-accent-teal) 100%);
+    color: white;
+    padding: var(--space-lg);
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-content h1 {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    margin-bottom: var(--space-sm);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header-subtitle {
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: var(--space-md);
+}
+
+.user-info {
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: var(--space-md);
+    border-radius: 8px;
+    margin-top: var(--space-md);
+}
+
+.user-info p {
+    margin: 0;
+}
+
+
+/* =========================================
+   Main Container & Stages
+   ========================================= */
+
+.main-container {
+    max-width: 800px;
+    margin: var(--space-lg) auto;
+    padding: var(--space-md);
+}
+
+.stage-container {
+    position: relative;
+}
+
+/* =========================================
+   Seussian Card (Wobble Effect)
+   ========================================= */
+
+.seuss-card {
+    background-color: white;
+    border: 4px solid var(--text-dark);
+    border-radius: 20px 25px 15px 30px; /* Wobbly corners */
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.6s ease-out;
+}
+
+/* Level-specific background colors (subtle Seussian palette) */
+#level-0 {
+    background: linear-gradient(135deg, rgba(127, 214, 86, 0.08), rgba(255, 215, 0, 0.08));
+}
+
+#level-1 {
+    background: linear-gradient(135deg, rgba(0, 168, 255, 0.08), rgba(0, 217, 163, 0.08));
+}
+
+#level-2 {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.08), rgba(255, 107, 107, 0.08));
+}
+
+#level-3 {
+    background: linear-gradient(135deg, rgba(255, 20, 147, 0.08), rgba(142, 68, 173, 0.08));
+}
+
+#level-4 {
+    background: linear-gradient(135deg, rgba(0, 168, 255, 0.08), rgba(127, 214, 86, 0.08));
+}
+
+#victory {
+    background: linear-gradient(135deg, rgba(127, 214, 86, 0.15), rgba(0, 168, 255, 0.15));
+}
+
+/* Slide-in animation for new levels */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Wobble animation (disabled for prefers-reduced-motion) */
+@keyframes wobble {
+    0% {
+        transform: rotate(0deg) skewY(0deg);
+    }
+    25% {
+        transform: rotate(-0.5deg) skewY(0.3deg);
+    }
+    50% {
+        transform: rotate(0.5deg) skewY(-0.3deg);
+    }
+    75% {
+        transform: rotate(-0.3deg) skewY(0.2deg);
+    }
+    100% {
+        transform: rotate(0deg) skewY(0deg);
+    }
+}
+
+.wobble-effect {
+    animation: wobble 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wobble-effect {
+        animation: none;
+    }
+}
+
+
+/* =========================================
+   Level Card & Content
+   ========================================= */
+
+.level-card h2 {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: var(--space-md);
+    text-align: center;
+}
+
+.card-content {
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Character Display */
+.character-intro {
+    text-align: center;
+    margin: var(--space-lg) 0;
+}
+
+.character {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    margin-bottom: var(--space-md);
+}
+
+.character svg {
+    width: 100%;
+    height: 100%;
+}
+
+.character-label {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+/* Rhyming Text */
+.rhyme {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: var(--space-lg) 0;
+    padding: var(--space-md);
+    background-color: rgba(255, 215, 0, 0.1); /* Faint yellow */
+    border-left: 4px solid var(--color-accent-orange);
+    border-radius: 4px;
+    color: var(--text-dark);
+}
+
+/* Git-Goat Speaks */
+.git-goat-speaks {
+    background-color: rgba(26, 188, 156, 0.1);
+    padding: var(--space-md);
+    border-radius: 8px;
+    margin: var(--space-md) 0;
+    border: 2px dashed var(--color-accent-teal);
+}
+
+/* Mission Box */
+.mission-box {
+    background-color: #F9F9F9;
+    border: 2px solid var(--color-accent-purple);
+    border-radius: 12px;
+    padding: var(--space-md);
+    margin: var(--space-lg) 0;
+}
+
+.mission-box h3 {
+    font-family: var(--font-display);
+    color: var(--color-accent-purple);
+    margin-bottom: var(--space-md);
+}
+
+.mission-box ol {
+    margin-left: var(--space-lg);
+}
+
+.mission-box li {
+    margin-bottom: var(--space-sm);
+    color: var(--text-dark);
+}
+
+/* Mission notes & tips */
+.mission-note {
+    background-color: rgba(127, 214, 86, 0.1);
+    border-left: 4px solid var(--color-seuss-lime);
+    padding: var(--space-md);
+    margin: var(--space-lg) 0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+.mission-note strong {
+    color: var(--color-primary);
+}
+
+/* =========================================
+   Forms & Inputs
+   ========================================= */
+
+.level-form {
+    margin: var(--space-lg) 0;
+}
+
+.form-group {
+    margin-bottom: var(--space-lg);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: var(--space-sm);
+    color: var(--text-dark);
+}
+
+.input-field,
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: var(--space-md);
+    font-size: 1rem;
+    border: 2px solid var(--text-dark);
+    border-radius: 8px;
+    font-family: var(--font-body);
+    background-color: white;
+    color: var(--text-dark);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-field:focus,
+input[type="text"]:focus,
+input[type="email"]:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(27, 94, 32, 0.2);
+}
+
+.form-hint {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: var(--space-sm);
+}
+
+.form-hint a {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.form-hint a:focus {
+    outline: 2px dashed var(--color-primary-focus);
+    outline-offset: 2px;
+}
+
+/* =========================================
+   Buttons
+   ========================================= */
+
+button,
+.level-button {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    padding: var(--space-md) var(--space-lg);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.button-primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.button-primary:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button-primary:focus {
+    outline: 3px dashed var(--color-primary-focus);
+    outline-offset: 2px;
+}
+
+.button-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Disabled state */
+.button-primary:disabled {
+    background-color: #CCCCCC;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* =========================================
+   Navigation Controls
+   ========================================= */
+
+.level-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    padding: var(--space-lg);
+    background: linear-gradient(135deg, rgba(127, 214, 86, 0.1), rgba(26, 188, 156, 0.1));
+    border-radius: 16px;
+    animation: slideUp 0.5s ease-out;
+}
+
+.nav-button {
+    background-color: var(--color-seuss-blue);
+    color: white;
+    padding: var(--space-md) var(--space-lg);
+    border: 3px solid var(--color-seuss-blue);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: var(--font-display);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0, 168, 255, 0.2);
+}
+
+.nav-button:hover:not([disabled]) {
+    background-color: var(--color-seuss-lime);
+    border-color: var(--color-seuss-lime);
+    color: var(--text-dark);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 12px rgba(127, 214, 86, 0.4);
+}
+
+.nav-button:focus {
+    outline: 3px dashed var(--color-primary-focus);
+    outline-offset: 3px;
+}
+
+.nav-button:active:not([disabled]) {
+    transform: translateY(-1px) scale(0.98);
+    box-shadow: 0 2px 4px rgba(0, 168, 255, 0.2);
+}
+
+.nav-button:disabled {
+    background-color: #CCCCCC;
+    border-color: #CCCCCC;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.nav-button[hidden] {
+    display: none;
+}
+
+.level-indicator {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    font-family: var(--font-display);
+}
+
+#level-counter {
+    display: inline-block;
+    min-width: 2.5rem;
+    text-align: center;
+    padding: var(--space-sm);
+    background-color: var(--color-seuss-yellow);
+    border-radius: 8px;
+    color: var(--text-dark);
+}
+
+
+/* =========================================
+   Links & CTAs
+   ========================================= */
+
+.action-link {
+    display: inline-block;
+    padding: var(--space-md) var(--space-lg);
+    margin: var(--space-md) 0;
+    background-color: var(--color-accent-teal);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.action-link:hover {
+    background-color: #0A9B7F;
+}
+
+.action-link:focus {
+    outline: 3px dashed var(--color-primary-focus);
+    outline-offset: 2px;
+}
+
+/* =========================================
+   Error Messages
+   ========================================= */
+
+.error-msg {
+    display: none;
+    padding: var(--space-md);
+    margin: var(--space-md) 0;
+    background-color: #FFEBEE;
+    border-left: 4px solid #D32F2F;
+    color: #C62828;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.error-msg.show {
+    display: block;
+}
+
+/* =========================================
+   Hints (Collapsible Details)
+   ========================================= */
+
+.hint {
+    margin-top: var(--space-lg);
+    padding: var(--space-md);
+    background-color: #EFF8FF;
+    border: 2px dashed var(--color-accent-teal);
+    border-radius: 8px;
+}
+
+.hint summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--color-accent-teal);
+    user-select: none;
+    padding: var(--space-sm);
+}
+
+.hint summary:focus {
+    outline: 2px dashed var(--color-primary-focus);
+    outline-offset: 2px;
+}
+
+.hint summary:hover {
+    color: #0A9B7F;
+}
+
+.hint[open] summary {
+    margin-bottom: var(--space-md);
+}
+
+.hint p {
+    margin: var(--space-md) 0 0 0;
+    color: var(--text-dark);
+}
+
+/* =========================================
+   Victory Screen
+   ========================================= */
+
+.victory-card {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(142, 68, 173, 0.1));
+    text-align: center;
+}
+
+.victory-content h2 {
+    font-size: 2.5rem;
+    animation: bounce 0.6s ease-out;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.victory-rhyme {
+    font-size: 1.2rem;
+    margin: var(--space-lg) 0;
+}
+
+.victory-actions {
+    margin: var(--space-xl) 0;
+}
+
+.victory-actions h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: var(--space-md);
+}
+
+.victory-actions ul {
+    list-style: none;
+    margin: var(--space-lg) 0;
+    padding: 0;
+}
+
+.victory-actions li {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-md);
+    color: var(--text-dark);
+}
+
+/* =========================================
+   Footer & Glossary
+   ========================================= */
+
+.site-footer {
+    background-color: #F5F5F5;
+    padding: var(--space-lg);
+    border-top: 2px solid var(--text-dark);
+    margin-top: var(--space-xl);
+}
+
+.glossary {
+    background-color: white;
+    border: 2px dashed var(--text-dark);
+    border-radius: 12px;
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
+    cursor: pointer;
+}
+
+.glossary summary {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    user-select: none;
+    padding: var(--space-sm);
+}
+
+.glossary summary:hover {
+    color: var(--color-primary);
+}
+
+.glossary summary:focus {
+    outline: 2px dashed var(--color-primary-focus);
+    outline-offset: 2px;
+}
+
+.glossary-content {
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid #DDD;
+}
+
+.glossary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--space-md);
+    background-color: #FAFAFA;
+}
+
+.glossary-table thead {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.glossary-table th,
+.glossary-table td {
+    padding: var(--space-md);
+    text-align: left;
+    border: 1px solid #DDD;
+}
+
+.glossary-table th {
+    font-weight: bold;
+}
+
+.glossary-table tr:nth-child(even) {
+    background-color: #F9F9F9;
+}
+
+.glossary-table tr:hover {
+    background-color: rgba(27, 94, 32, 0.05);
+}
+
+.footer-text {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-top: var(--space-lg);
+}
+
+.footer-text a {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.footer-text a:focus {
+    outline: 2px dashed var(--color-primary-focus);
+    outline-offset: 2px;
+}
+
+/* =========================================
+   Responsive Design
+   ========================================= */
+
+@media (max-width: 768px) {
+    .main-container {
+        padding: var(--space-sm);
+    }
+
+    .seuss-card {
+        padding: var(--space-md);
+    }
+
+    .header-content h1 {
+        font-size: 2rem;
+    }
+
+    .level-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .rhyme {
+        font-size: 1rem;
+    }
+
+    .character {
+        width: 100px;
+        height: 100px;
+    }
+
+    button,
+    .level-button {
+        padding: var(--space-md) var(--space-md);
+        font-size: 1rem;
+    }
+
+    .glossary-table {
+        font-size: 0.9rem;
+    }
+
+    .glossary-table th,
+    .glossary-table td {
+        padding: var(--space-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .header-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .level-card h2 {
+        font-size: 1.3rem;
+    }
+
+    .seuss-card {
+        padding: var(--space-sm);
+    }
+
+    .rhyme {
+        font-size: 0.95rem;
+        padding: var(--space-sm);
+    }
+
+    .mission-box {
+        padding: var(--space-sm);
+    }
+
+    .mission-box ol {
+        margin-left: var(--space-md);
+    }
+
+    button,
+    .level-button {
+        width: 100%;
+        padding: var(--space-md);
+    }
+}
+
+/* =========================================
+   Focus Parallax (Keyboard Accessibility)
+   ========================================= */
+
+/* The camera follows focus for keyboard users */
+input:focus,
+button:focus,
+a:focus {
+    --camera-x: var(--camera-x, 0);
+}
+
+/* Subtle background shift based on focus */
+@media (prefers-reduced-motion: no-preference) {
+    body {
+        background-attachment: fixed;
+    }
+}
+
+/* =========================================
+   Decorative Seussian Elements
+   ========================================= */
+
+/* Floating stars/bubbles in background */
+.stage-container::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(127, 214, 86, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 168, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 40% 90%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 90% 10%, rgba(255, 20, 147, 0.05) 0%, transparent 50%);
+    animation: gradientShift 15s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stage-container::before {
+        animation: none;
+    }
+}

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Git-Goat's Gazette</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Skip Link for Keyboard Users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+        <div class="header-content">
+            <h1>The Git-Goat's Gazette</h1>
+            <p class="header-subtitle">A collaborative storytelling adventure</p>
+            <div class="user-info" aria-live="polite" aria-atomic="true">
+                <p id="user-status">Enter your GitHub username to begin.</p>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-container">
+        <div class="stage-container">
+            <!-- Navigation Controls -->
+            <div class="level-navigation">
+                <button id="prev-button" class="nav-button nav-prev" aria-label="Go to previous level" hidden>← Previous Page</button>
+                <span class="level-indicator">
+                    <span id="level-counter">0</span> / 5
+                </span>
+                <button id="next-button" class="nav-button nav-next" aria-label="Go to next level" hidden>Next Page →</button>
+            </div>
+            <!-- LEVEL 0: The Messy Desk (Login) -->
+            <section id="level-0" class="seuss-card level-card" aria-labelledby="level-0-title">
+                <div class="card-content">
+                    <h2 id="level-0-title" class="level-title">Level 0: The Messy Desk</h2>
+                    
+                    <div class="character-intro">
+                        <div class="character grumpy-gopher">
+                            <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <!-- Grumpy Gopher: Rounder, fluffier Seussian design -->
+                                <!-- Body -->
+                                <ellipse cx="50" cy="60" rx="28" ry="35" fill="#A0826D" class="wobble-effect"/>
+                                <!-- Head -->
+                                <circle cx="50" cy="30" r="20" fill="#8B6F47" class="wobble-effect"/>
+                                <!-- Ears (perky Seussian ears) -->
+                                <ellipse cx="35" cy="10" rx="7" ry="10" fill="#8B6F47"/>
+                                <ellipse cx="35" cy="10" rx="4" ry="6" fill="#A0826D"/>
+                                <ellipse cx="65" cy="10" rx="7" ry="10" fill="#8B6F47"/>
+                                <ellipse cx="65" cy="10" rx="4" ry="6" fill="#A0826D"/>
+                                <!-- Snout (adorable gopher snout) -->
+                                <circle cx="50" cy="35" r="8" fill="#C19A6B"/>
+                                <!-- Eyes -->
+                                <circle cx="42" cy="25" r="3.5" fill="#2A1A3F"/>
+                                <circle cx="58" cy="25" r="3.5" fill="#2A1A3F"/>
+                                <circle cx="42.5" cy="24" r="1" fill="white"/>
+                                <circle cx="58.5" cy="24" r="1" fill="white"/>
+                                <!-- Grumpy mouth -->
+                                <path d="M 46 38 Q 50 40 54 38" stroke="#2A1A3F" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                <!-- Front paws -->
+                                <ellipse cx="38" cy="85" rx="6" ry="10" fill="#8B6F47"/>
+                                <ellipse cx="62" cy="85" rx="6" ry="10" fill="#8B6F47"/>
+                                <!-- Paw pads -->
+                                <ellipse cx="38" cy="92" rx="4" ry="5" fill="#6B5437"/>
+                                <ellipse cx="62" cy="92" rx="4" ry="5" fill="#6B5437"/>
+                            </svg>
+                        </div>
+                        <p class="character-label">The Grumpy Gopher</p>
+                    </div>
+
+                    <p class="rhyme">
+                        <em>"I do not like this GitHub thing!<br>
+                        It is for Coders! Not for Kings!<br>
+                        I write the Laws! I draw the Art!<br>
+                        I do not know where I should start."</em>
+                    </p>
+
+                    <div class="git-goat-speaks">
+                        <p><strong>The Git-Goat says:</strong> "It is not just for code, my friend! It helps the writer reach the end! Just type your Name to start the flow."</p>
+                    </div>
+
+                    <form class="level-form" role="form">
+                        <div class="form-group">
+                            <label for="github-username">Your GitHub Username:</label>
+                            <input 
+                                type="text" 
+                                id="github-username" 
+                                class="input-field" 
+                                placeholder="octocat"
+                                required
+                                aria-describedby="username-hint"
+                            >
+                            <p id="username-hint" class="form-hint">Enter your GitHub handle. Don't have one? <a href="https://github.com/signup" target="_blank">Sign up here</a>.</p>
+                        </div>
+                        <button type="button" id="login-button" class="level-button button-primary">I Am Who I Am!</button>
+                        <div id="level-0-error" class="error-msg" role="alert" aria-live="assertive"></div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- LEVEL 1: The House (Commenting on an Issue) -->
+            <section id="level-1" class="seuss-card level-card" aria-labelledby="level-1-title" hidden>
+                <div class="card-content">
+                    <h2 id="level-1-title" class="level-title">Level 1: The Suggestion Box</h2>
+
+                    <p class="rhyme">
+                        <em>"You have a name! You are a pro!<br>
+                        Now it's time to help us grow!<br>
+                        In our Issues, there's a special one—<br>
+                        Not Issue #1, but one that's fun!<br>
+                        Search for 'Suggestion' in the Issues queue.<br>
+                        Find it! Read it! Comment with a view!"</em>
+                    </p>
+
+                    <div class="mission-box">
+                        <h3>Your Mission:</h3>
+                        <ol>
+                            <li>Go to the repository on GitHub.</li>
+                            <li>Click the <strong>Issues</strong> tab.</li>
+                            <li><strong>Search for "Suggestion Box"</strong> in the issues (you'll need to search—no direct link!).</li>
+                            <li>Read the issue and understand what it's about.</li>
+                            <li>Leave a thoughtful comment (e.g., "Great idea!" or "How can I help?").</li>
+                            <li>Click the button below once you've posted.</li>
+                        </ol>
+                    </div>
+
+                    <a id="repo-link" class="action-link" target="_blank" rel="noopener">
+                        → Visit the Repository on GitHub
+                    </a>
+                    
+                    <p class="mission-note">💡 <strong>Tip:</strong> Learning to search a repository is a superpower! This is how real developers find information.</p>
+
+                    <button type="button" id="check-level-1" class="level-button button-primary">I Found & Commented!</button>
+                    <div id="level-1-error" class="error-msg" role="alert" aria-live="assertive"></div>
+
+                    <details class="hint">
+                        <summary>Need a hint?</summary>
+                        <p>On the GitHub Issues page, there's a search box at the top left. Type "Suggestion Box" to find it. If you just posted a comment, wait 30-60 seconds and try again—GitHub is indexing!</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- LEVEL 2: Creating Your Own Issue -->
+            <section id="level-2" class="seuss-card level-card" aria-labelledby="level-2-title" hidden>
+                <div class="card-content">
+                    <h2 id="level-2-title" class="level-title">Level 2: You're a Creator!</h2>
+
+                    <p class="rhyme">
+                        <em>"You've read the box, you've left your voice,<br>
+                        Now comes the time to make a choice!<br>
+                        Create an issue of your own—<br>
+                        Show what ideas you have sown!<br>
+                        You're not just reading anymore,<br>
+                        You're a creator, through the door!"</em>
+                    </p>
+                        A bug that fills me full of rage!<br>
+                        Do not just call me on the phone.<br>
+                        Create a Ticket! Make it clear!<br>
+                        Click New Issue. Make it bright!<br>
+                        Title it: 'The Anchor is Tight!'"</em>
+                    </p>
+
+                    <div class="mission-box">
+                        <h3>Your Mission:</h3>
+                        <ol>
+                            <li>Go to the <strong>Issues</strong> tab again.</li>
+                            <li>Click the <strong>New Issue</strong> button.</li>
+                            <li>Title it: <strong>"The Anchor is Tight"</strong> (or include those words).</li>
+                            <li>Write a brief description of the "problem" (any message is fine!).</li>
+                            <li>Submit the issue.</li>
+                            <li>Click the button below.</li>
+                        </ol>
+                    </div>
+
+                    <a id="new-issue-link" class="action-link" target="_blank" rel="noopener">
+                        → Open New Issue in GitHub
+                    </a>
+
+                    <button type="button" id="check-level-2" class="level-button button-primary">I Caught The Mouse!</button>
+                    <div id="level-2-error" class="error-msg" role="alert" aria-live="assertive"></div>
+
+                    <details class="hint">
+                        <summary>Need a hint?</summary>
+                        <p>Just like Level 1, GitHub's search can take 30-60 seconds. If it doesn't find your issue right away, wait and try again!</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- LEVEL 3: The GNU (License Check) -->
+            <section id="level-3" class="seuss-card level-card" aria-labelledby="level-3-title" hidden>
+                <div class="card-content">
+                    <h2 id="level-3-title" class="level-title">Level 3: The Wise GNU</h2>
+
+                    <div class="character-intro">
+                        <div class="character wise-gnu">
+                            <svg viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <!-- Wise GNU: Majestic, scholarly wildebeest with personality -->
+                                <!-- Body -->
+                                <ellipse cx="50" cy="75" rx="32" ry="38" fill="#4A3655" class="wobble-effect"/>
+                                <!-- Shaggy mane (Seussian style) -->
+                                <path d="M 35 50 Q 30 40 35 30" fill="#3A3655" stroke="#3A3655" stroke-width="3"/>
+                                <path d="M 50 45 Q 45 35 50 25" fill="#3A3655" stroke="#3A3655" stroke-width="3"/>
+                                <path d="M 65 50 Q 70 40 65 30" fill="#3A3655" stroke="#3A3655" stroke-width="3"/>
+                                <!-- Head -->
+                                <circle cx="50" cy="38" r="18" fill="#5A4665" class="wobble-effect"/>
+                                <!-- Snout -->
+                                <ellipse cx="50" cy="50" rx="12" ry="8" fill="#6A5675"/>
+                                <!-- Magnificent curved horns (Seussian style) -->
+                                <path d="M 30 28 Q 15 25 12 15" stroke="#3A3A3A" stroke-width="4" fill="none" stroke-linecap="round"/>
+                                <path d="M 70 28 Q 85 25 88 15" stroke="#3A3A3A" stroke-width="4" fill="none" stroke-linecap="round"/>
+                                <!-- Inner horn detail -->
+                                <path d="M 30 28 Q 18 26 15 18" stroke="#5A5A5A" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                <path d="M 70 28 Q 82 26 85 18" stroke="#5A5A5A" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                <!-- Eyes (wise and knowing) -->
+                                <circle cx="40" cy="35" r="3" fill="#FFF"/>
+                                <circle cx="60" cy="35" r="3" fill="#FFF"/>
+                                <circle cx="40" cy="35" r="1.5" fill="#3A3A3A"/>
+                                <circle cx="60" cy="35" r="1.5" fill="#3A3A3A"/>
+                                <!-- Intelligent expression (raised eyebrows) -->
+                                <path d="M 36 32 Q 40 30 44 32" stroke="#3A3A3A" stroke-width="1.5" fill="none"/>
+                                <path d="M 56 32 Q 60 30 64 32" stroke="#3A3A3A" stroke-width="1.5" fill="none"/>
+                                <!-- Beard stubble for wisdom -->
+                                <circle cx="48" cy="54" r="1" fill="#3A3A3A" opacity="0.6"/>
+                                <circle cx="50" cy="55" r="1" fill="#3A3A3A" opacity="0.6"/>
+                                <circle cx="52" cy="54" r="1" fill="#3A3A3A" opacity="0.6"/>
+                                <!-- Front legs -->
+                                <rect x="40" y="105" width="5" height="18" fill="#4A3655"/>
+                                <rect x="55" y="105" width="5" height="18" fill="#4A3655"/>
+                                <!-- Hooves -->
+                                <rect x="39" y="120" width="7" height="8" fill="#2A2A2A"/>
+                                <rect x="54" y="120" width="7" height="8" fill="#2A2A2A"/>
+                            </svg>
+                        </div>
+                        <p class="character-label">The Wise GNU</p>
+                    </div>
+
+                    <p class="rhyme">
+                        <em>"I am the GNU. I know the Law.<br>
+                        You wrote a Book. You made a Map.<br>
+                        But is it free? Or is it trapped?<br>
+                        If people use the work you make,<br>
+                        Which are the rights that they can take?<br>
+                        You need a License! Pick one now!"</em>
+                    </p>
+
+                    <div class="mission-box">
+                        <h3>Your Mission:</h3>
+                        <ol>
+                            <li>Navigate to your repository (fork or copy of this project).</li>
+                            <li>Click "Add file" → "Create new file".</li>
+                            <li>Name it: <strong>LICENSE</strong></li>
+                            <li>Choose a license (MIT is simple and popular—<a href="https://choosealicense.com" target="_blank">help here</a>).</li>
+                            <li>Paste the license text and commit the file.</li>
+                            <li>Click the button below.</li>
+                        </ol>
+                    </div>
+
+                    <button type="button" id="check-level-3" class="level-button button-primary">The GNU Let Me Through!</button>
+                    <div id="level-3-error" class="error-msg" role="alert" aria-live="assertive"></div>
+
+                    <details class="hint">
+                        <summary>What is a License?</summary>
+                        <p>A License tells people how they can use your work. MIT is free and simple. Creative Commons is great for writing and art.</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- LEVEL 4: The Proposal Train (Pull Request) -->
+            <section id="level-4" class="seuss-card level-card" aria-labelledby="level-4-title" hidden>
+                <div class="card-content">
+                    <h2 id="level-4-title" class="level-title">Level 4: The Proposal Train</h2>
+
+                    <p class="rhyme">
+                        <em>"The Train is here! The whistle blows!<br>
+                        It carries Words and Art and Prose!<br>
+                        You want to change the Final Draft.<br>
+                        But changing originals is daft!<br>
+                        Make a Copy (Fork) instead.<br>
+                        Change the words. Then send the Proposal!<br>
+                        Then we satisfy the creative urge!"</em>
+                    </p>
+
+                    <div class="mission-box">
+                        <h3>Your Mission (The Final Boss):</h3>
+                        <ol>
+                            <li><strong>Fork</strong> the main repository (if you haven't already).</li>
+                            <li>In your fork, edit the file <strong>menu.txt</strong>.</li>
+                            <li>On line 2, add: <strong>Green Eggs</strong></li>
+                            <li>Commit your changes.</li>
+                            <li>Create a <strong>Pull Request</strong> (PR) back to the main repo.</li>
+                            <li>Click the button below.</li>
+                        </ol>
+                    </div>
+
+                    <a id="fork-link" class="action-link" target="_blank" rel="noopener">
+                        → Fork the Repository
+                    </a>
+
+                    <button type="button" id="check-level-4" class="level-button button-primary">I Stopped The Train!</button>
+                    <div id="level-4-error" class="error-msg" role="alert" aria-live="assertive"></div>
+
+                    <details class="hint">
+                        <summary>What is a Pull Request?</summary>
+                        <p>A Pull Request is a polite way to say: "I have an idea for a change. Would you like to use it?" The owner can review it and decide.</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- VICTORY SCREEN -->
+            <section id="victory" class="seuss-card victory-card" aria-labelledby="victory-title" hidden>
+                <div class="card-content victory-content">
+                    <h2 id="victory-title" class="level-title">🎉 The Feast! 🎉</h2>
+
+                    <p class="rhyme victory-rhyme">
+                        <em>"Say! I like this GitHub stuff!<br>
+                        I do! I like it, sure enough!<br>
+                        I like to Fork. I like to Clone.<br>
+                        I will commit when I'm alone!<br>
+                        I will write here and there.<br>
+                        I will collaborate ANYWHERE!<br>
+                        You fixed the code! You saved the day!<br>
+                        You are a Winner, shout Hooray!"</em>
+                    </p>
+
+                    <div class="victory-actions">
+                        <h3>What's Next?</h3>
+                        <p>You've completed the Git-Goat's Gazette! You've now:</p>
+                        <ul>
+                            <li>✅ Logged in with your GitHub account</li>
+                            <li>✅ Left a comment on an issue</li>
+                            <li>✅ Created a new issue</li>
+                            <li>✅ Added a LICENSE file</li>
+                            <li>✅ Made a Pull Request</li>
+                        </ul>
+
+                        <p>These are the core skills of collaborative development. You're ready to contribute to real projects!</p>
+
+                        <a id="profile-link" class="level-button button-primary" target="_blank" rel="noopener">
+                            View My Contribution Graph →
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- GLOSSARY: The Educational Layer -->
+    <footer class="site-footer" role="contentinfo">
+        <details class="glossary">
+            <summary>📖 What is the Goat talking about?</summary>
+            <div class="glossary-content">
+                <table class="glossary-table">
+                    <thead>
+                        <tr>
+                            <th>What the Goat Says</th>
+                            <th>GitHub Term</th>
+                            <th>What It Really Means</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>The House / Project Folder</td>
+                            <td>Repository</td>
+                            <td>A folder in the cloud that tracks every change ever made to files inside it.</td>
+                        </tr>
+                        <tr>
+                            <td>Suggestion Box / Comments</td>
+                            <td>Issues</td>
+                            <td>A public discussion thread about a specific problem or idea. Like a sticky note.</td>
+                        </tr>
+                        <tr>
+                            <td>Personal Copy</td>
+                            <td>Fork</td>
+                            <td>Photocopying a document so you can scribble on it without ruining the original.</td>
+                        </tr>
+                        <tr>
+                            <td>Proposal</td>
+                            <td>Pull Request</td>
+                            <td>Showing your scribbled-on photocopy to the owner and asking, "Do you want to keep these changes?"</td>
+                        </tr>
+                        <tr>
+                            <td>Accept</td>
+                            <td>Merge</td>
+                            <td>Taping your changes into the main book.</td>
+                        </tr>
+                        <tr>
+                            <td>Save Point</td>
+                            <td>Commit</td>
+                            <td>Taking a snapshot of your work at a moment in time so you can always return to it.</td>
+                        </tr>
+                        <tr>
+                            <td>License</td>
+                            <td>License</td>
+                            <td>A legal agreement that tells people what they can and cannot do with your work.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+
+        <p class="footer-text">
+            <strong>The Git-Goat's Gazette</strong> is an accessible, playful introduction to collaborative development on GitHub. 
+            <a href="https://github.com" target="_blank">Learn more about GitHub.</a>
+        </p>
+    </footer>
+
+    <script src="game.js"></script>
+</body>
+</html>
