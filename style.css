@@ -18,10 +18,10 @@
     /* Seussian Color Palette (more vibrant & playful) */
     --color-accent-orange: #FF5722;
     --color-accent-purple: #8E44AD;
-    --color-accent-teal: #1ABC9C;
+    --color-accent-teal: #0E8C73;
     --color-seuss-lime: #7FD656;
     --color-seuss-pink: #FF1493;
-    --color-seuss-blue: #00A8FF;
+    --color-seuss-blue: #0077B6;
     --color-seuss-yellow: #FFD700;
     --color-seuss-magenta: #FF00FF;
     --color-seuss-coral: #FF6B6B;
@@ -195,7 +195,12 @@ body {
     padding: var(--space-lg);
     margin-bottom: var(--space-lg);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    animation: slideIn 0.6s ease-out;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .seuss-card {
+        animation: slideIn 0.6s ease-out;
+    }
 }
 
 /* Level-specific background colors (subtle Seussian palette) */
@@ -278,7 +283,12 @@ body {
 }
 
 .card-content {
-    animation: fadeIn 0.4s ease-out;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .card-content {
+        animation: fadeIn 0.4s ease-out;
+    }
 }
 
 @keyframes fadeIn {
@@ -491,7 +501,23 @@ button,
     padding: var(--space-lg);
     background: linear-gradient(135deg, rgba(127, 214, 86, 0.1), rgba(26, 188, 156, 0.1));
     border-radius: 16px;
-    animation: slideUp 0.5s ease-out;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .level-navigation {
+        animation: slideUp 0.5s ease-out;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .nav-button {
@@ -576,7 +602,7 @@ button,
 }
 
 .action-link:hover {
-    background-color: #0A9B7F;
+    background-color: #0B7A63;
 }
 
 .action-link:focus {
@@ -629,7 +655,7 @@ button,
 }
 
 .hint summary:hover {
-    color: #0A9B7F;
+    color: #0B7A63;
 }
 
 .hint[open] summary {
@@ -652,7 +678,12 @@ button,
 
 .victory-content h2 {
     font-size: 2.5rem;
-    animation: bounce 0.6s ease-out;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .victory-content h2 {
+        animation: bounce 0.6s ease-out;
+    }
 }
 
 @keyframes bounce {
