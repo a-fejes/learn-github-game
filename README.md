@@ -331,4 +331,9 @@ The characters—the Git-Goat, the Grumpy Gopher, and the Wise GNU—are origina
 
 **Have fun, and remember: Everyone is welcome in open source.**
 
+## AI Disclosure
+
+Yes. AI was used in creating this tool. There be dragons! 
+
+
 *– The Git-Goat* 🐐
